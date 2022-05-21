@@ -4,9 +4,9 @@ import "./Owner.sol";
 import "../models/FlightModel.sol";
 
 contract Flights is Owner {
-    mapping(string => Flight) public flights;
-    mapping(string => bool) public availableFlights;
-    Flight[] public availableFlightsList;
+    mapping(string => Flight) private flights;
+    mapping(string => bool) private availableFlights;
+    Flight[] private availableFlightsList;
 
     event FlightAdded(Flight flight);
 
@@ -18,11 +18,16 @@ contract Flights is Owner {
         emit FlightAdded(flight);
     }
 
-    function isFlightAvailiable(string memory number) private view returns(bool) {
+    function isFlightAvailiable(string memory number) public view returns(bool) {
         return availableFlights[number];
     }
 
     function getAvailableFlights() external view returns(Flight[] memory) {
         return availableFlightsList;
+    }
+
+    function getFlight(string memory flightNumber) external view returns(Flight memory) {
+        require(isFlightAvailiable(flightNumber), "Flight not available");
+        return flights[flightNumber]; 
     }
 }

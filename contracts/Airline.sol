@@ -12,16 +12,39 @@ contract Airline is Owner {
     }
 
     mapping(address => User) users;
-
+    event FlightBooked(address user, Flight flight);
+    
     Flights flightContract;
     constructor(Flights flight) {
         flightContract = flight;
     }
 
     function bookFlight(string memory flightNumber) external payable {
-        require(flightContract.isFlightAvailiable(flightNumber));
-        require(msg.value ==  flightContract.availableFlights(flightNumber));
+        Flight memory flight = flightContract.getFlight(flightNumber);
+        require(msg.value ==  flight.price * 10**18, "Wrong price");
+        users[msg.sender].bookedFlights.push(flight);
+        users[msg.sender].loyalityPoints ++;
+        emit FlightBooked(msg.sender, flight);
+    }
 
+    function getUser() external view returns(User memory) {
+        return users[msg.sender];
+    }
+
+    function reclaimPoints() external payable {
+        require(users[msg.sender].loyalityPoints > 5, "Not enought points");
+        require(users[msg.sender].loyalityPoints * 0.05 ether < address(this).balance, "Not enought balance");
+        uint points = users[msg.sender].loyalityPoints;
+        users[msg.sender].loyalityPoints = 0;
+        payable(msg.sender).transfer(points * 0.05 ether);
+    }
+
+    function getBalance() external view onlyOwner() returns(uint) {
+        return address(this).balance;
+    }
+
+    function getProfit(uint value) external payable onlyOwner {
+       payable(owner).transfer(value);
     }
 
 
