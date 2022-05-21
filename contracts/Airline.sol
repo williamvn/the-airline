@@ -18,11 +18,11 @@ contract Airline is Owner {
         flightContract = flight;
     }
 
-    // function bookFlight(string memory flightNumber) external payable {
-    //     require(Flights.isFlightAvailiable(flightNumber));
-    //     require(msg.value ==  Flights.availableFlights());
+    function bookFlight(string memory flightNumber) external payable {
+        require(flightContract.isFlightAvailiable(flightNumber));
+        require(msg.value ==  flightContract.availableFlights(flightNumber));
 
-    // }
+    }
 
 
 

@@ -1,0 +1,18 @@
+.Panel {
+    width: 25em;
+    margin: 30px;
+    min-height: 50px;
+    background-color: grey;
+    box-shadow: rgba(209, 209, 216, 0.2) 0px 7px 29px 0px;
+}
+
+.title {
+    /* width: 100%; */
+    background-color: green;
+}
+
+.content {
+    min-height: 200px;
+    padding: 5px 30px;
+    font-size: small;
+}
