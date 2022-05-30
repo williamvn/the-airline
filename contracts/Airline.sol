@@ -15,6 +15,7 @@ contract Airline is Owner {
     event FlightBooked(address indexed user, Flight flight);
     uint etherPerPoint = 0.05 ether;
     Flights flightContract;
+    
     constructor(Flights flight) {
         flightContract = flight;
     }
