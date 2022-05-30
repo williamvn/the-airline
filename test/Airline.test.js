@@ -1,4 +1,4 @@
-const assert  = require('assert');
+const assert = require('assert');
 const Airline = artifacts.require("Airline");
 const Flights = artifacts.require("Flights");
 let airline;
@@ -15,20 +15,32 @@ beforeEach(async () => {
 });
 
 contract('Airline', (accounts) => {
-    it('should book a flight', async () => {
-        // arrange
-        await addFlights();
-        const price = web3.utils.toWei(flightsList[0][3].toString());
-        const number = flightsList[0][0];
+    describe("Flight Booking", () => {
+        it('should book a flight', async () => {
+            // arrange
+            await addFlights();
+            const price = web3.utils.toWei(flightsList[0][3].toString());
+            const number = flightsList[0][0];
 
-        //act
-        await airline.bookFlight(number, { from: accounts[1], value: price });
-        const user = await airline.getUser({from: accounts[1]});
+            //act
+            await airline.bookFlight(number, { from: accounts[1], value: price });
+            const user = await airline.getUser({ from: accounts[1] });
 
-        //assert
-        assert.equal(user.loyalityPoints, 1);
-        assert.equal(user.bookedFlights.length, 1);
-        assert.equal(user.bookedFlights[0].number, number);
+            //assert
+            assert.equal(user.loyalityPoints, 1);
+            assert.equal(user.bookedFlights.length, 1);
+            assert.equal(user.bookedFlights[0].number, number);
+        });
+
+        it('should fail trying to book an non existing flight', async () => {
+            let expected;
+            try {
+                await airline.bookFlight("NONEXISTING", { from: accounts[1], value: 1 });
+            } catch (error) {
+                expected = error;
+            }
+            assert.ok(expected?.message.includes("Flight not available"));
+        });
     });
 });
 
