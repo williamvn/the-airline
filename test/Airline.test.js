@@ -54,7 +54,8 @@ contract('Airline', (accounts) => {
             }
             assert.ok(expected?.message.includes("Wrong price"));
         });
-
+    });
+    describe("Points Reclamation", () => {
         it('should be able to reclaim points in ether after 5 purchases', async () => {
             // arrange
             await addFlights();
