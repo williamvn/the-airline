@@ -13,7 +13,7 @@ contract Airline is Owner {
  
     mapping(address => User) users;
     event FlightBooked(address indexed user, Flight flight);
-    uint etherPerPoint = 0.05 ether;
+    uint etherPerPoint = 0.2 ether;
     Flights flightContract;
     
     constructor(Flights flight) {
@@ -33,11 +33,11 @@ contract Airline is Owner {
     }
 
     function reclaimPoints() external payable {
-        require(users[msg.sender].loyalityPoints > 5, "Not enought points");
-        require(users[msg.sender].loyalityPoints * etherPerPoint < address(this).balance, "Not enought balance");
+        require(users[msg.sender].loyalityPoints >= 5, "Not enought points");
+        require(users[msg.sender].loyalityPoints * etherPerPoint * 1**18 < address(this).balance, "Not enought balance");
         uint points = users[msg.sender].loyalityPoints;
         users[msg.sender].loyalityPoints = 0;
-        payable(msg.sender).transfer(points * etherPerPoint);
+        payable(msg.sender).transfer(points * etherPerPoint * 1**18);
     }
 
     function getBalance() external view onlyOwner() returns(uint) {

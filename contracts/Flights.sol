@@ -12,6 +12,7 @@ contract Flights is Owner {
 
     function addFlight(Flight memory flight) external onlyOwner() {
         require(!isFlightAvailiable(flight.number), "Flight already registered");
+        require(flight.price >= 1, "A lower price could hack the contract");
         availableFlights[flight.number] = true;
         flights[flight.number] = flight;
         availableFlightsList.push(flight);
