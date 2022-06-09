@@ -1,11 +1,12 @@
 import Web3 from "web3";
 
-export function getWeb3() {
+const getWeb3 = () => {
     return new Promise((resolve, reject) => {
         window.addEventListener('load', () => {
-            let web3 = window.web3;
+            let web3 = window.ethereum;
+            web3.enable();
             if(typeof web3 !== undefined) {
-                web3 = new Web3(web3.currentProvider);
+                web3 = new Web3(web3);
                 resolve(web3);
             }
             else {
@@ -15,3 +16,5 @@ export function getWeb3() {
         });
     });
 }
+
+export default getWeb3;

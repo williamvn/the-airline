@@ -1,12 +1,29 @@
 import './App.css';
-import {Panel} from '../Panel/Panel';
+import { Panel } from '../Panel/Panel';
+import { useEffect, useState } from 'react';
+import { useWeb3 } from '../../Hooks/useWeb3';
 
 function App() {
+  const web3 = useWeb3();
+  const [account, setAccount] = useState();
+
+  useEffect(() => {
+    if (web3) {
+      web3.eth.getAccounts().then((accounts) => {
+        setAccount(accounts[0].toLowerCase())
+      })
+    }
+  }, [web3])
+
   return (
     <div className="App">
-     <div className='navbar-title'>
+      <div className='navbar-title'>
         Wellcome to the airline
-     </div>
+        <div className='tool-tip'>
+          <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+          <span className="tool-tip-text">{account}</span>
+        </div>
+      </div>
       <header className="App-header">
         <div className='column'>
           <Panel title="Balance" data="Some Data: Lorem itsu maki tuki"></Panel>
@@ -15,7 +32,7 @@ function App() {
         <div className='column'>
           <Panel title="Your flights" data="Some Data: Lorem itsu maki tuki"></Panel>
           <Panel title="Available Flights" data="Some Data: Lorem itsu maki tuki"></Panel>
-      </div>
+        </div>
       </header>
     </div>
   );

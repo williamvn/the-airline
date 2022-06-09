@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Panel.css';
 
 export const Panel = ({title, data }) => (
@@ -12,7 +11,3 @@ export const Panel = ({title, data }) => (
     </div>
   </div>
 );
-
-Panel.propTypes = {};
-
-Panel.defaultProps = {};
