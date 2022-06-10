@@ -4,7 +4,6 @@ const getWeb3 = () => {
     return new Promise((resolve, reject) => {
         window.addEventListener('load', () => {
             let web3 = window.ethereum;
-            web3.enable();
             if(typeof web3 !== undefined) {
                 web3 = new Web3(web3);
                 resolve(web3);

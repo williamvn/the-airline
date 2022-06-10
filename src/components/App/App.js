@@ -6,19 +6,19 @@ import getAirline from "../../providers/airline";
 
 function App() {
   const web3 = useWeb3();
-  const [account, setAccount] = useState();
+  const [user, setUser] = useState({ account: "", balance: 0 });
   const airline = useRef(null);
 
   useEffect(() => {
-    if (web3) {
-      web3.eth.getAccounts().then((accounts) => {
-        setAccount(accounts[0].toLowerCase())
-      });
-      getAirline().then(air => {
-        airline.current = air
-        console.log(airline);
-      });
-    }
+    (async () => {
+      if (web3) {
+        const accounts = await web3.eth.getAccounts();
+        const account = accounts[0].toLowerCase();
+        const balance = await web3.eth.getBalance(account);
+        setUser({ account, balance });
+        console.log(balance);
+      }
+    })();
 
   }, [web3])
 
@@ -28,12 +28,12 @@ function App() {
         Wellcome to the airline
         <div className='tool-tip'>
           <i className="fa fa-user-circle-o" aria-hidden="true"></i>
-          <span className="tool-tip-text">{account}</span>
+          <span className="tool-tip-text">{user.account}</span>
         </div>
       </div>
       <header className="App-header">
         <div className='column'>
-          <Panel title="Balance" data="Some Data: Lorem itsu maki tuki"></Panel>
+          <Panel title="Balance" data={user.balance}></Panel>
           <Panel title="Loyality points - refundable ether" data="Some Data: Lorem itsu maki tuki"></Panel>
         </div>
         <div className='column'>
