@@ -1,18 +1,25 @@
 import './App.css';
 import { Panel } from '../Panel/Panel';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useWeb3 } from '../../Hooks/useWeb3';
+import getAirline from "../../providers/airline";
 
 function App() {
   const web3 = useWeb3();
   const [account, setAccount] = useState();
+  const airline = useRef(null);
 
   useEffect(() => {
     if (web3) {
       web3.eth.getAccounts().then((accounts) => {
         setAccount(accounts[0].toLowerCase())
-      })
+      });
+      getAirline().then(air => {
+        airline.current = air
+        console.log(airline);
+      });
     }
+
   }, [web3])
 
   return (
