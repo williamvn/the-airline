@@ -3,6 +3,7 @@ import { Panel } from '../Panel/Panel';
 import { useEffect, useRef, useState } from 'react';
 import { useWeb3 } from '../../Hooks/useWeb3';
 import getAirline from "../../providers/airline";
+import Balance from '../Balance/Balance';
 
 function App() {
   const web3 = useWeb3();
@@ -14,9 +15,9 @@ function App() {
       if (web3) {
         const accounts = await web3.eth.getAccounts();
         const account = accounts[0].toLowerCase();
-        const balance = await web3.eth.getBalance(account);
+        let balance = (await web3.eth.getBalance(account));
+        balance = web3.utils.fromWei(balance, 'ether');
         setUser({ account, balance });
-        console.log(balance);
       }
     })();
 
@@ -33,12 +34,20 @@ function App() {
       </div>
       <header className="App-header">
         <div className='column'>
-          <Panel title="Balance" data={user.balance}></Panel>
-          <Panel title="Loyality points - refundable ether" data="Some Data: Lorem itsu maki tuki"></Panel>
+          <Panel title="Balance">
+            <Balance balance={user.balance}></Balance>
+          </Panel>
+          <Panel title="Loyality points - refundable ether" >
+            <p>"Some Data: Lorem itsu maki tuki"</p>
+          </Panel>
         </div>
         <div className='column'>
-          <Panel title="Your flights" data="Some Data: Lorem itsu maki tuki"></Panel>
-          <Panel title="Available Flights" data="Some Data: Lorem itsu maki tuki"></Panel>
+          <Panel title="Your flights" >
+            <p>"Some Data: Lorem itsu maki tuki"</p>
+          </Panel>
+          <Panel title="Available Flights" >
+            <p>"Some Data: Lorem itsu maki tuki"</p>
+          </Panel>
         </div>
       </header>
     </div>
