@@ -5,4 +5,4 @@ export default async () => {
     const flights = contract(FlightsContract);
     flights.setProvider(window.ethereum);
     return flights.deployed();
-}; 
+};

@@ -2,13 +2,13 @@ import './App.css';
 import { Panel } from '../Panel/Panel';
 import { useEffect, useRef, useState } from 'react';
 import { useWeb3 } from '../../Hooks/useWeb3';
-import getAirline from "../../providers/airline";
 import Balance from '../Balance/Balance';
+import { AirlineService } from '../../services/AirlineService';
+import { FlightService } from '../../services/FlightService';
 
 function App() {
   const web3 = useWeb3();
   const [user, setUser] = useState({ account: "", balance: 0 });
-  const airline = useRef(null);
 
   useEffect(() => {
     (async () => {
@@ -20,8 +20,14 @@ function App() {
         setUser({ account, balance });
       }
     })();
+  }, [web3]);
 
-  }, [web3])
+  useEffect(() => {
+    (async () => {
+      const flightsService = await FlightService.getInstance();
+      console.log(await flightsService.getAvailableFlights());
+    })();
+  }, [])
 
   return (
     <div className="App">
