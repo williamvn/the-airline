@@ -39,7 +39,7 @@ function App() {
           <Panel title="Balance">
             <ContenLabel content={user.balance + " ETH"}></ContenLabel>
           </Panel>
-          <Panel title="Loyality points - refundable ether" >
+          <Panel title="Loyality points - refundable ether">
             <ContenLabel content={userClient.loyalityPoints + " points"}></ContenLabel>
           </Panel>
         </div>
@@ -47,7 +47,7 @@ function App() {
           <Panel title="Available Flights" >
             <FlightList flights={availableFlights}></FlightList>
           </Panel>
-          <Panel title="Your flights" >
+          <Panel title="Your flights" actionIconClass="fa fa-plus-square-o" actionPlaceHolder="Book New Flight">
             <FlightList flights={userClient.bookedFlights}></FlightList>
           </Panel>
         </div>

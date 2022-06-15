@@ -1,0 +1,66 @@
+.Panel {
+    width: 25em;
+    margin: 30px;
+    min-height: 50px;
+    background-color: grey;
+    box-shadow: rgba(209, 209, 216, 0.2) 0px 7px 29px 0px;
+}
+
+.title {
+    width: 100%;
+    background-color: green;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.title span {
+    position: relative;
+}
+
+.recenter {
+    left: 10%;
+}
+
+.content {
+    min-height: 50px;
+    padding: 5px 30px;
+    font-size: small;
+    display: flex;
+}
+
+.toolTip {
+    position: relative;
+    left: 45%;
+}
+
+.toolTip i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.toolTip i:hover {
+    color: rgb(156, 59, 59);
+}
+
+/* Tool-tip text */
+.toolTip .toolTipText {
+    visibility: hidden;
+    padding: 10px !important;
+    background-color: rgb(138, 138, 138);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    top: 35px;
+    right: 20px;
+    font-size: small;
+    /* Position the tool-tip text - see examples below! */
+    position: relative;
+    z-index: 1;
+}
+
+/* Show the tool-tip text when you mouse over the tool-tip container */
+.toolTip:hover .toolTipText {
+    visibility: visible;
+}

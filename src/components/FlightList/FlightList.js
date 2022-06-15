@@ -6,8 +6,8 @@ const FlightList = ({ flights }) => (
 
   <ul className={styles.FlightList} data-testid="FlightList">
     {
-      flights.map(flight =>
-        <li key={flight.number} className={styles.flight}>
+      flights.map((flight, i) =>
+        <li key={flight.number + i} className={styles.flight}>
           <div className={styles.header}>
             {flight.number}
             <div className={styles.badge}>
@@ -24,7 +24,7 @@ const FlightList = ({ flights }) => (
         </li>
       )
     }
-    { flights.length == 0 && 
+    { flights.length === 0 && 
       <div className={styles.center}>
         <p>No Flights</p>
       </div>
