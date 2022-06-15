@@ -1,0 +1,38 @@
+.FlightList {
+    width: 100%;
+}
+
+.flight {
+    list-style: none;
+}
+
+.header {
+    display: flex;
+    font-weight: bolder;
+    justify-content: space-between;
+    color: green;
+}
+
+.route {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+hr {
+    border: none;
+    position: relative;
+    bottom: 5px;
+    border-top: 2px dotted green;
+    background-color: white;
+    background-color: #fff;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.plane {
+    position: relative;
+    top: 5px;
+    margin-right: 5px;
+}

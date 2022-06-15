@@ -5,6 +5,7 @@ import { useWeb3 } from '../../Hooks/useWeb3';
 import Balance from '../Balance/Balance';
 import { AirlineService } from '../../services/AirlineService';
 import { FlightService } from '../../services/FlightService';
+import FlightList from '../FlightList/FlightList';
 
 function App() {
   const web3 = useWeb3();
@@ -21,11 +22,11 @@ function App() {
       }
     })();
   }, [web3]);
-
+  const [flights, setFlights] = useState([]);
   useEffect(() => {
     (async () => {
       const flightsService = await FlightService.getInstance();
-      console.log(await flightsService.getAvailableFlights());
+      flightsService.getAvailableFlights().then(flights => setFlights(flights));
     })();
   }, [])
 
@@ -52,11 +53,11 @@ function App() {
             <p>"Some Data: Lorem itsu maki tuki"</p>
           </Panel>
           <Panel title="Available Flights" >
-            <p>"Some Data: Lorem itsu maki tuki"</p>
+            <FlightList flights={flights}></FlightList>
           </Panel>
         </div>
-      </header>
-    </div>
+      </header >
+    </div >
   );
 }
 
