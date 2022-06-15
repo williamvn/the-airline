@@ -11,7 +11,7 @@ export class AirlineService {
         return this.singleton;
     }
 
-    getUser() {
-        return this.airlineContract.getUser();
+    getUser(account) {
+        return this.airlineContract.getUser({from: account});
     }
 }

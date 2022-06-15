@@ -10,6 +10,8 @@ import { useUserClient } from '../../Hooks/useUserClient';
 function App() {
   const web3 = useWeb3();
   const [user, setUser] = useState({ account: "", balance: 0 });
+  const availableFlights = useAvailableFlights();
+  const userClient = useUserClient();
 
   useEffect(() => {
     (async () => {
@@ -22,10 +24,6 @@ function App() {
       }
     })();
   }, [web3]);
-  
-  const availableFlights = useAvailableFlights();
-
-  const userClient = useUserClient();
 
   return (
     <div className={styles.App}>

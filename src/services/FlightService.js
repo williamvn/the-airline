@@ -12,7 +12,6 @@ export class FlightService {
     }
 
     getAvailableFlights() {
-        console.log(this.flightContract);
         return this.flightContract.getAvailableFlights();
     }
 }
