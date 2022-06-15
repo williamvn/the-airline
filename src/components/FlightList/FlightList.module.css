@@ -19,7 +19,7 @@
     justify-content: space-around;
 }
 
-hr {
+.route hr {
     border: none;
     position: relative;
     bottom: 5px;

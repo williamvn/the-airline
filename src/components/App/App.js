@@ -6,12 +6,14 @@ import ContenLabel from '../ContentLabel/ContentLabel';
 import FlightList from '../FlightList/FlightList';
 import { useAvailableFlights } from '../../Hooks/useAvailableFlights';
 import { useUserClient } from '../../Hooks/useUserClient';
+import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
 
 function App() {
   const web3 = useWeb3();
   const [user, setUser] = useState({ account: "", balance: 0 });
   const availableFlights = useAvailableFlights();
   const userClient = useUserClient();
+  const [showBookFlightPopup, setShowBookFlightPopup] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -47,11 +49,12 @@ function App() {
           <Panel title="Available Flights" >
             <FlightList flights={availableFlights}></FlightList>
           </Panel>
-          <Panel title="Your flights" actionIconClass="fa fa-plus-square-o" actionPlaceHolder="Book New Flight">
+          <Panel title="Your flights" actionIconClass="fa fa-plus-square-o" actionPlaceHolder="Book New Flight" action={() => setShowBookFlightPopup(true)}>
             <FlightList flights={userClient.bookedFlights}></FlightList>
           </Panel>
         </div>
-      </header >
+      </header>
+      {showBookFlightPopup && <BookFlightPopup onClose={()=> setShowBookFlightPopup(false)}></BookFlightPopup>}
     </div >
   );
 }

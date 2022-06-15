@@ -14,4 +14,8 @@ export class AirlineService {
     getUser(account) {
         return this.airlineContract.getUser({from: account});
     }
+
+    bookFlight(flightNumber, account, price) {
+        return this.airlineContract.bookFlight(flightNumber, {from: account, price});
+    }
 }
