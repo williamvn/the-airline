@@ -11,8 +11,8 @@ export class FlightService {
         return this.singleton;
     }
 
-    async getAvailableFlights() {
+    getAvailableFlights() {
         console.log(this.flightContract);
-        return (await this.flightContract).getAvailableFlights();
+        return this.flightContract.getAvailableFlights();
     }
 }

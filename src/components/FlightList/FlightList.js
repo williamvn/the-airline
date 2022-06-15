@@ -24,6 +24,11 @@ const FlightList = ({ flights }) => (
         </li>
       )
     }
+    { flights.length == 0 && 
+      <div className={styles.center}>
+        <p>No Flights</p>
+      </div>
+    }
   </ul>
 );
 

@@ -1,11 +1,11 @@
-import './App.css';
+import styles from './App.module.css';
 import { Panel } from '../Panel/Panel';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useWeb3 } from '../../Hooks/useWeb3';
-import Balance from '../Balance/Balance';
-import { AirlineService } from '../../services/AirlineService';
-import { FlightService } from '../../services/FlightService';
+import ContenLabel from '../ContentLabel/ContentLabel';
 import FlightList from '../FlightList/FlightList';
+import { useAvailableFlights } from '../../Hooks/useAvailableFlights';
+import { useUserClient } from '../../Hooks/useUserClient';
 
 function App() {
   const web3 = useWeb3();
@@ -22,38 +22,35 @@ function App() {
       }
     })();
   }, [web3]);
-  const [flights, setFlights] = useState([]);
-  useEffect(() => {
-    (async () => {
-      const flightsService = await FlightService.getInstance();
-      flightsService.getAvailableFlights().then(flights => setFlights(flights));
-    })();
-  }, [])
+  
+  const availableFlights = useAvailableFlights();
+
+  const userClient = useUserClient();
 
   return (
-    <div className="App">
-      <div className='navbar-title'>
+    <div className={styles.App}>
+      <div className={styles["navbar-title"]}>
         Wellcome to the airline
-        <div className='tool-tip'>
+        <div className={styles['tool-tip']}>
           <i className="fa fa-user-circle-o" aria-hidden="true"></i>
-          <span className="tool-tip-text">{user.account}</span>
+          <span className={styles["tool-tip-text"]}>{user.account}</span>
         </div>
       </div>
-      <header className="App-header">
-        <div className='column'>
+      <header className={styles["App-header"]}>
+        <div className={styles.row}>
           <Panel title="Balance">
-            <Balance balance={user.balance}></Balance>
+            <ContenLabel content={user.balance + " ETH"}></ContenLabel>
           </Panel>
           <Panel title="Loyality points - refundable ether" >
-            <p>"Some Data: Lorem itsu maki tuki"</p>
+            <ContenLabel content={userClient.loyalityPoints + " points"}></ContenLabel>
           </Panel>
         </div>
-        <div className='column'>
-          <Panel title="Your flights" >
-            <p>"Some Data: Lorem itsu maki tuki"</p>
-          </Panel>
+        <div className={styles.row}>
           <Panel title="Available Flights" >
-            <FlightList flights={flights}></FlightList>
+            <FlightList flights={availableFlights}></FlightList>
+          </Panel>
+          <Panel title="Your flights" >
+            <FlightList flights={userClient.bookedFlights}></FlightList>
           </Panel>
         </div>
       </header >
