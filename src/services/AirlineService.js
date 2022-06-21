@@ -16,6 +16,6 @@ export class AirlineService {
     }
 
     bookFlight(flightNumber, account, price) {
-        return this.airlineContract.bookFlight(flightNumber, {from: account, price});
+        return this.airlineContract.bookFlight(flightNumber, {from: account, value: price});
     }
 }

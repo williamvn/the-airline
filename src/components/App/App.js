@@ -1,29 +1,27 @@
 import styles from './App.module.css';
 import { Panel } from '../Panel/Panel';
-import { useEffect, useState } from 'react';
-import { useWeb3 } from '../../Hooks/useWeb3';
+import { useContext, useEffect, useState } from 'react';
 import ContenLabel from '../ContentLabel/ContentLabel';
 import FlightList from '../FlightList/FlightList';
 import { useAvailableFlights } from '../../Hooks/useAvailableFlights';
 import { useUserClient } from '../../Hooks/useUserClient';
 import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
+import { Web3Context } from '../../contexts/Web3Context';
 
 function App() {
-  const web3 = useWeb3();
   const [user, setUser] = useState({ account: "", balance: 0 });
   const availableFlights = useAvailableFlights();
   const userClient = useUserClient();
   const [showBookFlightPopup, setShowBookFlightPopup] = useState(false);
+  const web3 = useContext(Web3Context);
 
   useEffect(() => {
     (async () => {
-      if (web3) {
         const accounts = await web3.eth.getAccounts();
         const account = accounts[0].toLowerCase();
         let balance = (await web3.eth.getBalance(account));
         balance = web3.utils.fromWei(balance, 'ether');
         setUser({ account, balance });
-      }
     })();
   }, [web3]);
 

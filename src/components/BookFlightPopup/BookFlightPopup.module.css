@@ -53,6 +53,11 @@
     cursor: pointer;
 }
 
+.closeDisabled:hover {
+    cursor: default;
+    color: #aaaaaa;
+}
+
 .title {
     font-size: large;
     font-weight: 300;
@@ -87,4 +92,13 @@
     position: relative;
     top: 5px;
     margin-right: 5px;
+}
+
+.flightSelect span {
+    position: relative;
+    left: 0;
+}
+
+.errorText {
+    color: red;
 }
