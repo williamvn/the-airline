@@ -13,17 +13,15 @@ function App() {
   const availableFlights = useAvailableFlights();
   const userClient = useUserClient();
   const [showBookFlightPopup, setShowBookFlightPopup] = useState(false);
-  const web3 = useContext(Web3Context);
+  const {provider:web3, account} = useContext(Web3Context);
 
   useEffect(() => {
     (async () => {
-        const accounts = await web3.eth.getAccounts();
-        const account = accounts[0].toLowerCase();
         let balance = (await web3.eth.getBalance(account));
         balance = web3.utils.fromWei(balance, 'ether');
         setUser({ account, balance });
     })();
-  }, [web3]);
+  }, [web3, account]);
 
   return (
     <div className={styles.App}>

@@ -14,7 +14,6 @@ const BookFlightPopup = ({ onClose }) => {
 
   useEffect(() => {
     if (availableFlights.length > 0) {
-      console.log(availableFlights)
       setFlight(availableFlights[0]);
 
       const map = availableFlights.reduce((acc, current) => {
