@@ -37,7 +37,7 @@ function App() {
           <Panel title="Balance">
             <ContenLabel content={user.balance + " ETH"}></ContenLabel>
           </Panel>
-          <Panel title="Loyality points - refundable ether">
+          <Panel title="Loyality points - refundable ether"  actionIconClass="fa fa-plus-square-o" actionPlaceHolder="Exchange Points for Ether" action={() => setShowBookFlightPopup(true)}>
             <ContenLabel content={userClient.loyalityPoints + " points"}></ContenLabel>
           </Panel>
         </div>
