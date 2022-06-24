@@ -26,6 +26,13 @@ export class AirlineService {
         return this.flightBookedEvent;
     }
 
+    getPointsRedeemedEvent() {
+        if(!this.pointsRedeemedEvent) {
+            this.pointsRedeemedEvent = this.airlineContract.PointsRedeemed();
+        }
+        return this.pointsRedeemedEvent;
+    }
+
     reclaimPoints(account) {
         return this.airlineContract.reclaimPoints({from:account});
     }

@@ -100,7 +100,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -135,7 +136,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -176,7 +178,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"number\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"origin\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"destination\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct Flight\",\"name\":\"flight\",\"type\":\"tuple\"}],\"name\":\"FlightAdded\",\"type\":\"event\"},{\"inputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"number\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"origin\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"destination\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"internalType\":\"struct Flight\",\"name\":\"flight\",\"type\":\"tuple\"}],\"name\":\"addFlight\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"changeOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAvailableFlights\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"number\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"origin\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"destination\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"internalType\":\"struct Flight[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"flightNumber\",\"type\":\"string\"}],\"name\":\"getFlight\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"number\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"origin\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"destination\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"internalType\":\"struct Flight\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"number\",\"type\":\"string\"}],\"name\":\"isFlightAvailiable\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Flights.sol\":\"Flights\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Flights.sol\":{\"keccak256\":\"0x593f71417cfca21fd534cb4f4bbbf145737baad4ce9a22818b5e725b3ff5b0a7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0c8d6e22389f54d25f5bf95865312035f96f80001dab49367f4f38b820ae383\",\"dweb:/ipfs/QmbFr5TQ5Vax79946kaFFwG5ygppY1eUe78PM7MkRs3iXL\"]},\"project:/contracts/Owner.sol\":{\"keccak256\":\"0x32ab4d624a900f4076d74ff95152389280889d54c45e391827b2075c84b79b50\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d12f9447ecd79ee038a16bb309f3a2b70deab3ce63009236e17454ae5b4210e8\",\"dweb:/ipfs/QmVSSHUshN6heGL7Z2doTP77NrtQNnJJpaZt5dYGPjc5YF\"]},\"project:/models/FlightModel.sol\":{\"keccak256\":\"0xfa01d8e2f1bf716bdf17467eccefdff1307bbce1435df04703f93f0a9d6ad34e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5389696524bf32479a3a236906ab1590d8db8849297f2b6d445cc451c31e2b9e\",\"dweb:/ipfs/QmU6xVm2aCVavSRycN51KvWcNNb8kxW9d4mjFMkzpMjTFH\"]}},\"version\":1}",
@@ -3362,7 +3365,7 @@
                 }
               ]
             },
-            "name": "abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr_fromStack",
+            "name": "abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr_fromStack",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -3503,7 +3506,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr_fromStack",
+                      "name": "abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr_fromStack",
                       "nodeType": "YulIdentifier",
                       "src": "7296:89:5"
                     },
@@ -3520,7 +3523,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_struct$_Flight_$466_memory_ptr__to_t_struct$_Flight_$466_memory_ptr__fromStack_reversed",
+            "name": "abi_encode_tuple_t_struct$_Flight_$484_memory_ptr__to_t_struct$_Flight_$484_memory_ptr__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -3865,7 +3868,7 @@
           }
         ]
       },
-      "contents": "{\n\n    function panic_error_0x32() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x32)\n        revert(0, 0x24)\n    }\n\n    function panic_error_0x11() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function increment_t_uint256(value) -> ret {\n        value := cleanup_t_uint256(value)\n        if eq(value, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) { panic_error_0x11() }\n        ret := add(value, 1)\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function store_literal_in_memory_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2(memPtr) {\n\n        mstore(add(memPtr, 0), \"Access Denied, only owner can ac\")\n\n        mstore(add(memPtr, 32), \"cess this resource\")\n\n    }\n\n    function abi_encode_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 50)\n        store_literal_in_memory_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69(memPtr) {\n\n        mstore(add(memPtr, 0), \"Flight already registered\")\n\n    }\n\n    function abi_encode_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 25)\n        store_literal_in_memory_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427(memPtr) {\n\n        mstore(add(memPtr, 0), \"A lower price could hack the con\")\n\n        mstore(add(memPtr, 32), \"tract\")\n\n    }\n\n    function abi_encode_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 37)\n        store_literal_in_memory_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function array_length_t_string_memory_ptr(value) -> length {\n\n        length := mload(value)\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_nonPadded_inplace_fromStack(pos, length) -> updated_pos {\n        updated_pos := pos\n    }\n\n    function copy_memory_to_memory(src, dst, length) {\n        let i := 0\n        for { } lt(i, length) { i := add(i, 32) }\n        {\n            mstore(add(dst, i), mload(add(src, i)))\n        }\n        if gt(i, length)\n        {\n            // clear end\n            mstore(add(dst, length), 0)\n        }\n    }\n\n    function abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_nonPadded_inplace_fromStack(value, pos) -> end {\n        let length := array_length_t_string_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_nonPadded_inplace_fromStack(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, length)\n    }\n\n    function abi_encode_tuple_packed_t_string_memory_ptr__to_t_string_memory_ptr__nonPadded_inplace_fromStack_reversed(pos , value0) -> end {\n\n        pos := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_nonPadded_inplace_fromStack(value0,  pos)\n\n        end := pos\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function round_up_to_mul_of_32(value) -> result {\n        result := and(add(value, 31), not(31))\n    }\n\n    function abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(value, pos) -> end {\n        let length := array_length_t_string_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_string_memory_ptr(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, round_up_to_mul_of_32(length))\n    }\n\n    function abi_encode_t_uint256_to_t_uint256(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    // struct Flight -> struct Flight\n    function abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr_fromStack(value, pos)  -> end  {\n        let tail := add(pos, 0x80)\n\n        {\n            // number\n\n            let memberValue0 := mload(add(value, 0x00))\n\n            mstore(add(pos, 0x00), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // origin\n\n            let memberValue0 := mload(add(value, 0x20))\n\n            mstore(add(pos, 0x20), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // destination\n\n            let memberValue0 := mload(add(value, 0x40))\n\n            mstore(add(pos, 0x40), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // price\n\n            let memberValue0 := mload(add(value, 0x60))\n            abi_encode_t_uint256_to_t_uint256(memberValue0, add(pos, 0x60))\n        }\n\n        end := tail\n    }\n\n    function abi_encode_tuple_t_struct$_Flight_$466_memory_ptr__to_t_struct$_Flight_$466_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr_fromStack(value0,  tail)\n\n    }\n\n    function panic_error_0x22() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x22)\n        revert(0, 0x24)\n    }\n\n    function extract_byte_array_length(data) -> length {\n        length := div(data, 2)\n        let outOfPlaceEncoding := and(data, 1)\n        if iszero(outOfPlaceEncoding) {\n            length := and(length, 0x7f)\n        }\n\n        if eq(outOfPlaceEncoding, lt(length, 32)) {\n            panic_error_0x22()\n        }\n    }\n\n}\n",
+      "contents": "{\n\n    function panic_error_0x32() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x32)\n        revert(0, 0x24)\n    }\n\n    function panic_error_0x11() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function increment_t_uint256(value) -> ret {\n        value := cleanup_t_uint256(value)\n        if eq(value, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) { panic_error_0x11() }\n        ret := add(value, 1)\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function store_literal_in_memory_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2(memPtr) {\n\n        mstore(add(memPtr, 0), \"Access Denied, only owner can ac\")\n\n        mstore(add(memPtr, 32), \"cess this resource\")\n\n    }\n\n    function abi_encode_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 50)\n        store_literal_in_memory_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69(memPtr) {\n\n        mstore(add(memPtr, 0), \"Flight already registered\")\n\n    }\n\n    function abi_encode_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 25)\n        store_literal_in_memory_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427(memPtr) {\n\n        mstore(add(memPtr, 0), \"A lower price could hack the con\")\n\n        mstore(add(memPtr, 32), \"tract\")\n\n    }\n\n    function abi_encode_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 37)\n        store_literal_in_memory_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function array_length_t_string_memory_ptr(value) -> length {\n\n        length := mload(value)\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_nonPadded_inplace_fromStack(pos, length) -> updated_pos {\n        updated_pos := pos\n    }\n\n    function copy_memory_to_memory(src, dst, length) {\n        let i := 0\n        for { } lt(i, length) { i := add(i, 32) }\n        {\n            mstore(add(dst, i), mload(add(src, i)))\n        }\n        if gt(i, length)\n        {\n            // clear end\n            mstore(add(dst, length), 0)\n        }\n    }\n\n    function abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_nonPadded_inplace_fromStack(value, pos) -> end {\n        let length := array_length_t_string_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_nonPadded_inplace_fromStack(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, length)\n    }\n\n    function abi_encode_tuple_packed_t_string_memory_ptr__to_t_string_memory_ptr__nonPadded_inplace_fromStack_reversed(pos , value0) -> end {\n\n        pos := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_nonPadded_inplace_fromStack(value0,  pos)\n\n        end := pos\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function round_up_to_mul_of_32(value) -> result {\n        result := and(add(value, 31), not(31))\n    }\n\n    function abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(value, pos) -> end {\n        let length := array_length_t_string_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_string_memory_ptr(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, round_up_to_mul_of_32(length))\n    }\n\n    function abi_encode_t_uint256_to_t_uint256(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    // struct Flight -> struct Flight\n    function abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr_fromStack(value, pos)  -> end  {\n        let tail := add(pos, 0x80)\n\n        {\n            // number\n\n            let memberValue0 := mload(add(value, 0x00))\n\n            mstore(add(pos, 0x00), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // origin\n\n            let memberValue0 := mload(add(value, 0x20))\n\n            mstore(add(pos, 0x20), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // destination\n\n            let memberValue0 := mload(add(value, 0x40))\n\n            mstore(add(pos, 0x40), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // price\n\n            let memberValue0 := mload(add(value, 0x60))\n            abi_encode_t_uint256_to_t_uint256(memberValue0, add(pos, 0x60))\n        }\n\n        end := tail\n    }\n\n    function abi_encode_tuple_t_struct$_Flight_$484_memory_ptr__to_t_struct$_Flight_$484_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr_fromStack(value0,  tail)\n\n    }\n\n    function panic_error_0x22() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x22)\n        revert(0, 0x24)\n    }\n\n    function extract_byte_array_length(data) -> length {\n        length := div(data, 2)\n        let outOfPlaceEncoding := and(data, 1)\n        if iszero(outOfPlaceEncoding) {\n            length := and(length, 0x7f)\n        }\n\n        if eq(outOfPlaceEncoding, lt(length, 32)) {\n            panic_error_0x22()\n        }\n    }\n\n}\n",
       "id": 5,
       "language": "Yul",
       "name": "#utility.yul"
@@ -3911,7 +3914,7 @@
                 }
               ]
             },
-            "name": "array_length_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr",
+            "name": "array_length_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -3997,7 +4000,7 @@
                 }
               ]
             },
-            "name": "array_storeLengthForEncoding_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_fromStack",
+            "name": "array_storeLengthForEncoding_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_fromStack",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -4080,7 +4083,7 @@
                 }
               ]
             },
-            "name": "array_dataslot_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr",
+            "name": "array_dataslot_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -5474,7 +5477,7 @@
                 }
               ]
             },
-            "name": "abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr",
+            "name": "abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -5522,7 +5525,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr",
+                      "name": "abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr",
                       "nodeType": "YulIdentifier",
                       "src": "3050:79:5"
                     },
@@ -5539,7 +5542,7 @@
                 }
               ]
             },
-            "name": "abi_encodeUpdatedPos_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr",
+            "name": "abi_encodeUpdatedPos_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -5606,7 +5609,7 @@
                 }
               ]
             },
-            "name": "array_nextElement_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr",
+            "name": "array_nextElement_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -5643,7 +5646,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "array_length_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr",
+                      "name": "array_length_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr",
                       "nodeType": "YulIdentifier",
                       "src": "3532:70:5"
                     },
@@ -5676,7 +5679,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "array_storeLengthForEncoding_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_fromStack",
+                      "name": "array_storeLengthForEncoding_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_fromStack",
                       "nodeType": "YulIdentifier",
                       "src": "3625:96:5"
                     },
@@ -5771,7 +5774,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "array_dataslot_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr",
+                      "name": "array_dataslot_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr",
                       "nodeType": "YulIdentifier",
                       "src": "3835:72:5"
                     },
@@ -5895,7 +5898,7 @@
                             }
                           ],
                           "functionName": {
-                            "name": "abi_encodeUpdatedPos_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr",
+                            "name": "abi_encodeUpdatedPos_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr",
                             "nodeType": "YulIdentifier",
                             "src": "4128:89:5"
                           },
@@ -5922,7 +5925,7 @@
                             }
                           ],
                           "functionName": {
-                            "name": "array_nextElement_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr",
+                            "name": "array_nextElement_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr",
                             "nodeType": "YulIdentifier",
                             "src": "4261:75:5"
                           },
@@ -6096,7 +6099,7 @@
                 }
               ]
             },
-            "name": "abi_encode_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_to_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_fromStack",
+            "name": "abi_encode_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_to_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_fromStack",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -6237,7 +6240,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "abi_encode_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_to_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_fromStack",
+                      "name": "abi_encode_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_to_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_fromStack",
                       "nodeType": "YulIdentifier",
                       "src": "4743:139:5"
                     },
@@ -6254,7 +6257,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr__to_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr__fromStack_reversed",
+            "name": "abi_encode_tuple_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr__to_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -8952,7 +8955,7 @@
                 }
               ]
             },
-            "name": "abi_decode_t_struct$_Flight_$466_memory_ptr",
+            "name": "abi_decode_t_struct$_Flight_$484_memory_ptr",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -9176,7 +9179,7 @@
                           }
                         ],
                         "functionName": {
-                          "name": "abi_decode_t_struct$_Flight_$466_memory_ptr",
+                          "name": "abi_decode_t_struct$_Flight_$484_memory_ptr",
                           "nodeType": "YulIdentifier",
                           "src": "10689:43:5"
                         },
@@ -9195,7 +9198,7 @@
                 }
               ]
             },
-            "name": "abi_decode_tuple_t_struct$_Flight_$466_memory_ptr",
+            "name": "abi_decode_tuple_t_struct$_Flight_$484_memory_ptr",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -9803,7 +9806,7 @@
                 }
               ]
             },
-            "name": "abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr_fromStack",
+            "name": "abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr_fromStack",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -9944,7 +9947,7 @@
                       }
                     ],
                     "functionName": {
-                      "name": "abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr_fromStack",
+                      "name": "abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr_fromStack",
                       "nodeType": "YulIdentifier",
                       "src": "12190:89:5"
                     },
@@ -9961,7 +9964,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_struct$_Flight_$466_memory_ptr__to_t_struct$_Flight_$466_memory_ptr__fromStack_reversed",
+            "name": "abi_encode_tuple_t_struct$_Flight_$484_memory_ptr__to_t_struct$_Flight_$484_memory_ptr__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -12101,7 +12104,7 @@
           }
         ]
       },
-      "contents": "{\n\n    function array_length_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr(value) -> length {\n\n        length := mload(value)\n\n    }\n\n    function array_storeLengthForEncoding_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function array_dataslot_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr(ptr) -> data {\n        data := ptr\n\n        data := add(ptr, 0x20)\n\n    }\n\n    function array_length_t_string_memory_ptr(value) -> length {\n\n        length := mload(value)\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function copy_memory_to_memory(src, dst, length) {\n        let i := 0\n        for { } lt(i, length) { i := add(i, 32) }\n        {\n            mstore(add(dst, i), mload(add(src, i)))\n        }\n        if gt(i, length)\n        {\n            // clear end\n            mstore(add(dst, length), 0)\n        }\n    }\n\n    function round_up_to_mul_of_32(value) -> result {\n        result := and(add(value, 31), not(31))\n    }\n\n    function abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(value, pos) -> end {\n        let length := array_length_t_string_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_string_memory_ptr(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, round_up_to_mul_of_32(length))\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function abi_encode_t_uint256_to_t_uint256(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    // struct Flight -> struct Flight\n    function abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr(value, pos)  -> end  {\n        let tail := add(pos, 0x80)\n\n        {\n            // number\n\n            let memberValue0 := mload(add(value, 0x00))\n\n            mstore(add(pos, 0x00), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // origin\n\n            let memberValue0 := mload(add(value, 0x20))\n\n            mstore(add(pos, 0x20), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // destination\n\n            let memberValue0 := mload(add(value, 0x40))\n\n            mstore(add(pos, 0x40), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // price\n\n            let memberValue0 := mload(add(value, 0x60))\n            abi_encode_t_uint256_to_t_uint256(memberValue0, add(pos, 0x60))\n        }\n\n        end := tail\n    }\n\n    function abi_encodeUpdatedPos_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr(value0, pos) -> updatedPos {\n        updatedPos := abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr(value0, pos)\n    }\n\n    function array_nextElement_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr(ptr) -> next {\n        next := add(ptr, 0x20)\n    }\n\n    // struct Flight[] -> struct Flight[]\n    function abi_encode_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_to_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_fromStack(value, pos)  -> end  {\n        let length := array_length_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_fromStack(pos, length)\n        let headStart := pos\n        let tail := add(pos, mul(length, 0x20))\n        let baseRef := array_dataslot_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr(value)\n        let srcPtr := baseRef\n        for { let i := 0 } lt(i, length) { i := add(i, 1) }\n        {\n            mstore(pos, sub(tail, headStart))\n            let elementValue0 := mload(srcPtr)\n            tail := abi_encodeUpdatedPos_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr(elementValue0, tail)\n            srcPtr := array_nextElement_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr(srcPtr)\n            pos := add(pos, 0x20)\n        }\n        pos := tail\n        end := pos\n    }\n\n    function abi_encode_tuple_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr__to_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_to_t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr_fromStack(value0,  tail)\n\n    }\n\n    function allocate_unbounded() -> memPtr {\n        memPtr := mload(64)\n    }\n\n    function revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() {\n        revert(0, 0)\n    }\n\n    function revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() {\n        revert(0, 0)\n    }\n\n    function revert_error_1b9f4a0a5773e33b91aa01db23bf8c55fce1411167c872835e7fa00a4f17d46d() {\n        revert(0, 0)\n    }\n\n    function revert_error_987264b3b1d58a9c7f8255e93e81c77d86d6299019c33110a076957a3e06e2ae() {\n        revert(0, 0)\n    }\n\n    function panic_error_0x41() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x41)\n        revert(0, 0x24)\n    }\n\n    function finalize_allocation(memPtr, size) {\n        let newFreePtr := add(memPtr, round_up_to_mul_of_32(size))\n        // protect against overflow\n        if or(gt(newFreePtr, 0xffffffffffffffff), lt(newFreePtr, memPtr)) { panic_error_0x41() }\n        mstore(64, newFreePtr)\n    }\n\n    function allocate_memory(size) -> memPtr {\n        memPtr := allocate_unbounded()\n        finalize_allocation(memPtr, size)\n    }\n\n    function array_allocation_size_t_string_memory_ptr(length) -> size {\n        // Make sure we can allocate memory without overflow\n        if gt(length, 0xffffffffffffffff) { panic_error_0x41() }\n\n        size := round_up_to_mul_of_32(length)\n\n        // add length slot\n        size := add(size, 0x20)\n\n    }\n\n    function copy_calldata_to_memory(src, dst, length) {\n        calldatacopy(dst, src, length)\n        // clear end\n        mstore(add(dst, length), 0)\n    }\n\n    function abi_decode_available_length_t_string_memory_ptr(src, length, end) -> array {\n        array := allocate_memory(array_allocation_size_t_string_memory_ptr(length))\n        mstore(array, length)\n        let dst := add(array, 0x20)\n        if gt(add(src, length), end) { revert_error_987264b3b1d58a9c7f8255e93e81c77d86d6299019c33110a076957a3e06e2ae() }\n        copy_calldata_to_memory(src, dst, length)\n    }\n\n    // string\n    function abi_decode_t_string_memory_ptr(offset, end) -> array {\n        if iszero(slt(add(offset, 0x1f), end)) { revert_error_1b9f4a0a5773e33b91aa01db23bf8c55fce1411167c872835e7fa00a4f17d46d() }\n        let length := calldataload(offset)\n        array := abi_decode_available_length_t_string_memory_ptr(add(offset, 0x20), length, end)\n    }\n\n    function abi_decode_tuple_t_string_memory_ptr(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := calldataload(add(headStart, 0))\n            if gt(offset, 0xffffffffffffffff) { revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() }\n\n            value0 := abi_decode_t_string_memory_ptr(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function cleanup_t_bool(value) -> cleaned {\n        cleaned := iszero(iszero(value))\n    }\n\n    function abi_encode_t_bool_to_t_bool_fromStack(value, pos) {\n        mstore(pos, cleanup_t_bool(value))\n    }\n\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_bool_to_t_bool_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function revert_error_3538a459e4a0eb828f1aed5ebe5dc96fe59620a31d9b33e41259bb820cae769f() {\n        revert(0, 0)\n    }\n\n    function revert_error_5e8f644817bc4960744f35c15999b6eff64ae702f94b1c46297cfd4e1aec2421() {\n        revert(0, 0)\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    // struct Flight\n    function abi_decode_t_struct$_Flight_$466_memory_ptr(headStart, end) -> value {\n        if slt(sub(end, headStart), 0x80) { revert_error_3538a459e4a0eb828f1aed5ebe5dc96fe59620a31d9b33e41259bb820cae769f() }\n        value := allocate_memory(0x80)\n\n        {\n            // number\n\n            let offset := calldataload(add(headStart, 0))\n            if gt(offset, 0xffffffffffffffff) { revert_error_5e8f644817bc4960744f35c15999b6eff64ae702f94b1c46297cfd4e1aec2421() }\n\n            mstore(add(value, 0x00), abi_decode_t_string_memory_ptr(add(headStart, offset), end))\n\n        }\n\n        {\n            // origin\n\n            let offset := calldataload(add(headStart, 32))\n            if gt(offset, 0xffffffffffffffff) { revert_error_5e8f644817bc4960744f35c15999b6eff64ae702f94b1c46297cfd4e1aec2421() }\n\n            mstore(add(value, 0x20), abi_decode_t_string_memory_ptr(add(headStart, offset), end))\n\n        }\n\n        {\n            // destination\n\n            let offset := calldataload(add(headStart, 64))\n            if gt(offset, 0xffffffffffffffff) { revert_error_5e8f644817bc4960744f35c15999b6eff64ae702f94b1c46297cfd4e1aec2421() }\n\n            mstore(add(value, 0x40), abi_decode_t_string_memory_ptr(add(headStart, offset), end))\n\n        }\n\n        {\n            // price\n\n            let offset := 96\n\n            mstore(add(value, 0x60), abi_decode_t_uint256(add(headStart, offset), end))\n\n        }\n\n    }\n\n    function abi_decode_tuple_t_struct$_Flight_$466_memory_ptr(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := calldataload(add(headStart, 0))\n            if gt(offset, 0xffffffffffffffff) { revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() }\n\n            value0 := abi_decode_t_struct$_Flight_$466_memory_ptr(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    // struct Flight -> struct Flight\n    function abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr_fromStack(value, pos)  -> end  {\n        let tail := add(pos, 0x80)\n\n        {\n            // number\n\n            let memberValue0 := mload(add(value, 0x00))\n\n            mstore(add(pos, 0x00), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // origin\n\n            let memberValue0 := mload(add(value, 0x20))\n\n            mstore(add(pos, 0x20), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // destination\n\n            let memberValue0 := mload(add(value, 0x40))\n\n            mstore(add(pos, 0x40), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // price\n\n            let memberValue0 := mload(add(value, 0x60))\n            abi_encode_t_uint256_to_t_uint256(memberValue0, add(pos, 0x60))\n        }\n\n        end := tail\n    }\n\n    function abi_encode_tuple_t_struct$_Flight_$466_memory_ptr__to_t_struct$_Flight_$466_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_struct$_Flight_$466_memory_ptr_to_t_struct$_Flight_$466_memory_ptr_fromStack(value0,  tail)\n\n    }\n\n    function panic_error_0x22() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x22)\n        revert(0, 0x24)\n    }\n\n    function extract_byte_array_length(data) -> length {\n        length := div(data, 2)\n        let outOfPlaceEncoding := and(data, 1)\n        if iszero(outOfPlaceEncoding) {\n            length := and(length, 0x7f)\n        }\n\n        if eq(outOfPlaceEncoding, lt(length, 32)) {\n            panic_error_0x22()\n        }\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function store_literal_in_memory_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2(memPtr) {\n\n        mstore(add(memPtr, 0), \"Access Denied, only owner can ac\")\n\n        mstore(add(memPtr, 32), \"cess this resource\")\n\n    }\n\n    function abi_encode_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 50)\n        store_literal_in_memory_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_nonPadded_inplace_fromStack(pos, length) -> updated_pos {\n        updated_pos := pos\n    }\n\n    function abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_nonPadded_inplace_fromStack(value, pos) -> end {\n        let length := array_length_t_string_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_nonPadded_inplace_fromStack(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, length)\n    }\n\n    function abi_encode_tuple_packed_t_string_memory_ptr__to_t_string_memory_ptr__nonPadded_inplace_fromStack_reversed(pos , value0) -> end {\n\n        pos := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_nonPadded_inplace_fromStack(value0,  pos)\n\n        end := pos\n    }\n\n    function store_literal_in_memory_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69(memPtr) {\n\n        mstore(add(memPtr, 0), \"Flight already registered\")\n\n    }\n\n    function abi_encode_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 25)\n        store_literal_in_memory_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427(memPtr) {\n\n        mstore(add(memPtr, 0), \"A lower price could hack the con\")\n\n        mstore(add(memPtr, 32), \"tract\")\n\n    }\n\n    function abi_encode_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 37)\n        store_literal_in_memory_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_df1a0d86a44d5de631cc60c133bdeece1217f4070c52fc7158ec026a45ab0855(memPtr) {\n\n        mstore(add(memPtr, 0), \"Flight not available\")\n\n    }\n\n    function abi_encode_t_stringliteral_df1a0d86a44d5de631cc60c133bdeece1217f4070c52fc7158ec026a45ab0855_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 20)\n        store_literal_in_memory_df1a0d86a44d5de631cc60c133bdeece1217f4070c52fc7158ec026a45ab0855(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_df1a0d86a44d5de631cc60c133bdeece1217f4070c52fc7158ec026a45ab0855__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_df1a0d86a44d5de631cc60c133bdeece1217f4070c52fc7158ec026a45ab0855_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n}\n",
+      "contents": "{\n\n    function array_length_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr(value) -> length {\n\n        length := mload(value)\n\n    }\n\n    function array_storeLengthForEncoding_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function array_dataslot_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr(ptr) -> data {\n        data := ptr\n\n        data := add(ptr, 0x20)\n\n    }\n\n    function array_length_t_string_memory_ptr(value) -> length {\n\n        length := mload(value)\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function copy_memory_to_memory(src, dst, length) {\n        let i := 0\n        for { } lt(i, length) { i := add(i, 32) }\n        {\n            mstore(add(dst, i), mload(add(src, i)))\n        }\n        if gt(i, length)\n        {\n            // clear end\n            mstore(add(dst, length), 0)\n        }\n    }\n\n    function round_up_to_mul_of_32(value) -> result {\n        result := and(add(value, 31), not(31))\n    }\n\n    function abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(value, pos) -> end {\n        let length := array_length_t_string_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_string_memory_ptr(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, round_up_to_mul_of_32(length))\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function abi_encode_t_uint256_to_t_uint256(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    // struct Flight -> struct Flight\n    function abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr(value, pos)  -> end  {\n        let tail := add(pos, 0x80)\n\n        {\n            // number\n\n            let memberValue0 := mload(add(value, 0x00))\n\n            mstore(add(pos, 0x00), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // origin\n\n            let memberValue0 := mload(add(value, 0x20))\n\n            mstore(add(pos, 0x20), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // destination\n\n            let memberValue0 := mload(add(value, 0x40))\n\n            mstore(add(pos, 0x40), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // price\n\n            let memberValue0 := mload(add(value, 0x60))\n            abi_encode_t_uint256_to_t_uint256(memberValue0, add(pos, 0x60))\n        }\n\n        end := tail\n    }\n\n    function abi_encodeUpdatedPos_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr(value0, pos) -> updatedPos {\n        updatedPos := abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr(value0, pos)\n    }\n\n    function array_nextElement_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr(ptr) -> next {\n        next := add(ptr, 0x20)\n    }\n\n    // struct Flight[] -> struct Flight[]\n    function abi_encode_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_to_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_fromStack(value, pos)  -> end  {\n        let length := array_length_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_fromStack(pos, length)\n        let headStart := pos\n        let tail := add(pos, mul(length, 0x20))\n        let baseRef := array_dataslot_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr(value)\n        let srcPtr := baseRef\n        for { let i := 0 } lt(i, length) { i := add(i, 1) }\n        {\n            mstore(pos, sub(tail, headStart))\n            let elementValue0 := mload(srcPtr)\n            tail := abi_encodeUpdatedPos_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr(elementValue0, tail)\n            srcPtr := array_nextElement_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr(srcPtr)\n            pos := add(pos, 0x20)\n        }\n        pos := tail\n        end := pos\n    }\n\n    function abi_encode_tuple_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr__to_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_to_t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr_fromStack(value0,  tail)\n\n    }\n\n    function allocate_unbounded() -> memPtr {\n        memPtr := mload(64)\n    }\n\n    function revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() {\n        revert(0, 0)\n    }\n\n    function revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() {\n        revert(0, 0)\n    }\n\n    function revert_error_1b9f4a0a5773e33b91aa01db23bf8c55fce1411167c872835e7fa00a4f17d46d() {\n        revert(0, 0)\n    }\n\n    function revert_error_987264b3b1d58a9c7f8255e93e81c77d86d6299019c33110a076957a3e06e2ae() {\n        revert(0, 0)\n    }\n\n    function panic_error_0x41() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x41)\n        revert(0, 0x24)\n    }\n\n    function finalize_allocation(memPtr, size) {\n        let newFreePtr := add(memPtr, round_up_to_mul_of_32(size))\n        // protect against overflow\n        if or(gt(newFreePtr, 0xffffffffffffffff), lt(newFreePtr, memPtr)) { panic_error_0x41() }\n        mstore(64, newFreePtr)\n    }\n\n    function allocate_memory(size) -> memPtr {\n        memPtr := allocate_unbounded()\n        finalize_allocation(memPtr, size)\n    }\n\n    function array_allocation_size_t_string_memory_ptr(length) -> size {\n        // Make sure we can allocate memory without overflow\n        if gt(length, 0xffffffffffffffff) { panic_error_0x41() }\n\n        size := round_up_to_mul_of_32(length)\n\n        // add length slot\n        size := add(size, 0x20)\n\n    }\n\n    function copy_calldata_to_memory(src, dst, length) {\n        calldatacopy(dst, src, length)\n        // clear end\n        mstore(add(dst, length), 0)\n    }\n\n    function abi_decode_available_length_t_string_memory_ptr(src, length, end) -> array {\n        array := allocate_memory(array_allocation_size_t_string_memory_ptr(length))\n        mstore(array, length)\n        let dst := add(array, 0x20)\n        if gt(add(src, length), end) { revert_error_987264b3b1d58a9c7f8255e93e81c77d86d6299019c33110a076957a3e06e2ae() }\n        copy_calldata_to_memory(src, dst, length)\n    }\n\n    // string\n    function abi_decode_t_string_memory_ptr(offset, end) -> array {\n        if iszero(slt(add(offset, 0x1f), end)) { revert_error_1b9f4a0a5773e33b91aa01db23bf8c55fce1411167c872835e7fa00a4f17d46d() }\n        let length := calldataload(offset)\n        array := abi_decode_available_length_t_string_memory_ptr(add(offset, 0x20), length, end)\n    }\n\n    function abi_decode_tuple_t_string_memory_ptr(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := calldataload(add(headStart, 0))\n            if gt(offset, 0xffffffffffffffff) { revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() }\n\n            value0 := abi_decode_t_string_memory_ptr(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function cleanup_t_bool(value) -> cleaned {\n        cleaned := iszero(iszero(value))\n    }\n\n    function abi_encode_t_bool_to_t_bool_fromStack(value, pos) {\n        mstore(pos, cleanup_t_bool(value))\n    }\n\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_bool_to_t_bool_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function revert_error_3538a459e4a0eb828f1aed5ebe5dc96fe59620a31d9b33e41259bb820cae769f() {\n        revert(0, 0)\n    }\n\n    function revert_error_5e8f644817bc4960744f35c15999b6eff64ae702f94b1c46297cfd4e1aec2421() {\n        revert(0, 0)\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    // struct Flight\n    function abi_decode_t_struct$_Flight_$484_memory_ptr(headStart, end) -> value {\n        if slt(sub(end, headStart), 0x80) { revert_error_3538a459e4a0eb828f1aed5ebe5dc96fe59620a31d9b33e41259bb820cae769f() }\n        value := allocate_memory(0x80)\n\n        {\n            // number\n\n            let offset := calldataload(add(headStart, 0))\n            if gt(offset, 0xffffffffffffffff) { revert_error_5e8f644817bc4960744f35c15999b6eff64ae702f94b1c46297cfd4e1aec2421() }\n\n            mstore(add(value, 0x00), abi_decode_t_string_memory_ptr(add(headStart, offset), end))\n\n        }\n\n        {\n            // origin\n\n            let offset := calldataload(add(headStart, 32))\n            if gt(offset, 0xffffffffffffffff) { revert_error_5e8f644817bc4960744f35c15999b6eff64ae702f94b1c46297cfd4e1aec2421() }\n\n            mstore(add(value, 0x20), abi_decode_t_string_memory_ptr(add(headStart, offset), end))\n\n        }\n\n        {\n            // destination\n\n            let offset := calldataload(add(headStart, 64))\n            if gt(offset, 0xffffffffffffffff) { revert_error_5e8f644817bc4960744f35c15999b6eff64ae702f94b1c46297cfd4e1aec2421() }\n\n            mstore(add(value, 0x40), abi_decode_t_string_memory_ptr(add(headStart, offset), end))\n\n        }\n\n        {\n            // price\n\n            let offset := 96\n\n            mstore(add(value, 0x60), abi_decode_t_uint256(add(headStart, offset), end))\n\n        }\n\n    }\n\n    function abi_decode_tuple_t_struct$_Flight_$484_memory_ptr(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := calldataload(add(headStart, 0))\n            if gt(offset, 0xffffffffffffffff) { revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() }\n\n            value0 := abi_decode_t_struct$_Flight_$484_memory_ptr(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    // struct Flight -> struct Flight\n    function abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr_fromStack(value, pos)  -> end  {\n        let tail := add(pos, 0x80)\n\n        {\n            // number\n\n            let memberValue0 := mload(add(value, 0x00))\n\n            mstore(add(pos, 0x00), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // origin\n\n            let memberValue0 := mload(add(value, 0x20))\n\n            mstore(add(pos, 0x20), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // destination\n\n            let memberValue0 := mload(add(value, 0x40))\n\n            mstore(add(pos, 0x40), sub(tail, pos))\n            tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr(memberValue0, tail)\n\n        }\n\n        {\n            // price\n\n            let memberValue0 := mload(add(value, 0x60))\n            abi_encode_t_uint256_to_t_uint256(memberValue0, add(pos, 0x60))\n        }\n\n        end := tail\n    }\n\n    function abi_encode_tuple_t_struct$_Flight_$484_memory_ptr__to_t_struct$_Flight_$484_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_struct$_Flight_$484_memory_ptr_to_t_struct$_Flight_$484_memory_ptr_fromStack(value0,  tail)\n\n    }\n\n    function panic_error_0x22() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x22)\n        revert(0, 0x24)\n    }\n\n    function extract_byte_array_length(data) -> length {\n        length := div(data, 2)\n        let outOfPlaceEncoding := and(data, 1)\n        if iszero(outOfPlaceEncoding) {\n            length := and(length, 0x7f)\n        }\n\n        if eq(outOfPlaceEncoding, lt(length, 32)) {\n            panic_error_0x22()\n        }\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function store_literal_in_memory_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2(memPtr) {\n\n        mstore(add(memPtr, 0), \"Access Denied, only owner can ac\")\n\n        mstore(add(memPtr, 32), \"cess this resource\")\n\n    }\n\n    function abi_encode_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 50)\n        store_literal_in_memory_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_6fb91569f7dbcbfec289c3d8c9c1a6e98c7fecc41d79d9f1c21cba3623d281e2_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_nonPadded_inplace_fromStack(pos, length) -> updated_pos {\n        updated_pos := pos\n    }\n\n    function abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_nonPadded_inplace_fromStack(value, pos) -> end {\n        let length := array_length_t_string_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_nonPadded_inplace_fromStack(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, length)\n    }\n\n    function abi_encode_tuple_packed_t_string_memory_ptr__to_t_string_memory_ptr__nonPadded_inplace_fromStack_reversed(pos , value0) -> end {\n\n        pos := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_nonPadded_inplace_fromStack(value0,  pos)\n\n        end := pos\n    }\n\n    function store_literal_in_memory_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69(memPtr) {\n\n        mstore(add(memPtr, 0), \"Flight already registered\")\n\n    }\n\n    function abi_encode_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 25)\n        store_literal_in_memory_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_71cb1f83a5fcc2c9641e185a1ed0a341f8faa20f42704b96b51fd619c2aaca69_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427(memPtr) {\n\n        mstore(add(memPtr, 0), \"A lower price could hack the con\")\n\n        mstore(add(memPtr, 32), \"tract\")\n\n    }\n\n    function abi_encode_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 37)\n        store_literal_in_memory_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_393d301ac2087fc354d31061257b25a3421ee8b69500f2a0d930fc1ea0d07427_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_df1a0d86a44d5de631cc60c133bdeece1217f4070c52fc7158ec026a45ab0855(memPtr) {\n\n        mstore(add(memPtr, 0), \"Flight not available\")\n\n    }\n\n    function abi_encode_t_stringliteral_df1a0d86a44d5de631cc60c133bdeece1217f4070c52fc7158ec026a45ab0855_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 20)\n        store_literal_in_memory_df1a0d86a44d5de631cc60c133bdeece1217f4070c52fc7158ec026a45ab0855(pos)\n        end := add(pos, 32)\n    }\n\n    function abi_encode_tuple_t_stringliteral_df1a0d86a44d5de631cc60c133bdeece1217f4070c52fc7158ec026a45ab0855__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_df1a0d86a44d5de631cc60c133bdeece1217f4070c52fc7158ec026a45ab0855_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n}\n",
       "id": 5,
       "language": "Yul",
       "name": "#utility.yul"
@@ -12115,21 +12118,21 @@
     "absolutePath": "project:/contracts/Flights.sol",
     "exportedSymbols": {
       "Flight": [
-        466
+        484
       ],
       "Flights": [
-        385
+        403
       ],
       "Owner": [
-        455
+        473
       ]
     },
-    "id": 386,
+    "id": 404,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 203,
+        "id": 221,
         "literals": [
           "solidity",
           ">=",
@@ -12145,11 +12148,11 @@
       {
         "absolutePath": "project:/contracts/Owner.sol",
         "file": "./Owner.sol",
-        "id": 204,
+        "id": 222,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 386,
-        "sourceUnit": 456,
+        "scope": 404,
+        "sourceUnit": 474,
         "src": "67:21:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -12157,11 +12160,11 @@
       {
         "absolutePath": "project:/models/FlightModel.sol",
         "file": "../models/FlightModel.sol",
-        "id": 205,
+        "id": 223,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 386,
-        "sourceUnit": 467,
+        "scope": 404,
+        "sourceUnit": 485,
         "src": "90:35:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -12171,13 +12174,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 206,
+              "id": 224,
               "name": "Owner",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 455,
+              "referencedDeclaration": 473,
               "src": "149:5:1"
             },
-            "id": 207,
+            "id": 225,
             "nodeType": "InheritanceSpecifier",
             "src": "149:5:1"
           }
@@ -12186,10 +12189,10 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 385,
+        "id": 403,
         "linearizedBaseContracts": [
-          385,
-          455
+          403,
+          473
         ],
         "name": "Flights",
         "nameLocation": "138:7:1",
@@ -12197,23 +12200,23 @@
         "nodes": [
           {
             "constant": false,
-            "id": 212,
+            "id": 230,
             "mutability": "mutable",
             "name": "flights",
             "nameLocation": "196:7:1",
             "nodeType": "VariableDeclaration",
-            "scope": 385,
+            "scope": 403,
             "src": "162:41:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Flight_$466_storage_$",
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Flight_$484_storage_$",
               "typeString": "mapping(string => struct Flight)"
             },
             "typeName": {
-              "id": 211,
+              "id": 229,
               "keyType": {
-                "id": 208,
+                "id": 226,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
                 "src": "170:6:1",
@@ -12225,23 +12228,23 @@
               "nodeType": "Mapping",
               "src": "162:25:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Flight_$466_storage_$",
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Flight_$484_storage_$",
                 "typeString": "mapping(string => struct Flight)"
               },
               "valueType": {
-                "id": 210,
+                "id": 228,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 209,
+                  "id": 227,
                   "name": "Flight",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 466,
+                  "referencedDeclaration": 484,
                   "src": "180:6:1"
                 },
-                "referencedDeclaration": 466,
+                "referencedDeclaration": 484,
                 "src": "180:6:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Flight_$466_storage_ptr",
+                  "typeIdentifier": "t_struct$_Flight_$484_storage_ptr",
                   "typeString": "struct Flight"
                 }
               }
@@ -12250,12 +12253,12 @@
           },
           {
             "constant": false,
-            "id": 216,
+            "id": 234,
             "mutability": "mutable",
             "name": "availableFlights",
             "nameLocation": "242:16:1",
             "nodeType": "VariableDeclaration",
-            "scope": 385,
+            "scope": 403,
             "src": "210:48:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -12264,9 +12267,9 @@
               "typeString": "mapping(string => bool)"
             },
             "typeName": {
-              "id": 215,
+              "id": 233,
               "keyType": {
-                "id": 213,
+                "id": 231,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
                 "src": "218:6:1",
@@ -12282,7 +12285,7 @@
                 "typeString": "mapping(string => bool)"
               },
               "valueType": {
-                "id": 214,
+                "id": 232,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "228:4:1",
@@ -12296,42 +12299,42 @@
           },
           {
             "constant": false,
-            "id": 220,
+            "id": 238,
             "mutability": "mutable",
             "name": "availableFlightsList",
             "nameLocation": "282:20:1",
             "nodeType": "VariableDeclaration",
-            "scope": 385,
+            "scope": 403,
             "src": "265:37:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Flight_$466_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_Flight_$484_storage_$dyn_storage",
               "typeString": "struct Flight[]"
             },
             "typeName": {
               "baseType": {
-                "id": 218,
+                "id": 236,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 217,
+                  "id": 235,
                   "name": "Flight",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 466,
+                  "referencedDeclaration": 484,
                   "src": "265:6:1"
                 },
-                "referencedDeclaration": 466,
+                "referencedDeclaration": 484,
                 "src": "265:6:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Flight_$466_storage_ptr",
+                  "typeIdentifier": "t_struct$_Flight_$484_storage_ptr",
                   "typeString": "struct Flight"
                 }
               },
-              "id": 219,
+              "id": 237,
               "nodeType": "ArrayTypeName",
               "src": "265:8:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Flight_$466_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_Flight_$484_storage_$dyn_storage_ptr",
                 "typeString": "struct Flight[]"
               }
             },
@@ -12340,44 +12343,44 @@
           {
             "anonymous": false,
             "eventSelector": "ddd197767c7a2b1a3fa71853e3fd46419b663175947e8a97d59d69a40de9aeda",
-            "id": 225,
+            "id": 243,
             "name": "FlightAdded",
             "nameLocation": "317:11:1",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 224,
+              "id": 242,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 223,
+                  "id": 241,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "flight",
                   "nameLocation": "336:6:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 225,
+                  "scope": 243,
                   "src": "329:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                    "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                     "typeString": "struct Flight"
                   },
                   "typeName": {
-                    "id": 222,
+                    "id": 240,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 221,
+                      "id": 239,
                       "name": "Flight",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 466,
+                      "referencedDeclaration": 484,
                       "src": "329:6:1"
                     },
-                    "referencedDeclaration": 466,
+                    "referencedDeclaration": 484,
                     "src": "329:6:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Flight_$466_storage_ptr",
+                      "typeIdentifier": "t_struct$_Flight_$484_storage_ptr",
                       "typeString": "struct Flight"
                     }
                   },
@@ -12390,52 +12393,52 @@
           },
           {
             "body": {
-              "id": 291,
+              "id": 309,
               "nodeType": "Block",
               "src": "366:678:1",
               "statements": [
                 {
                   "assignments": [
-                    233
+                    251
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 233,
+                      "id": 251,
                       "mutability": "mutable",
                       "name": "seedFlights",
                       "nameLocation": "394:11:1",
                       "nodeType": "VariableDeclaration",
-                      "scope": 291,
+                      "scope": 309,
                       "src": "377:28:1",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_Flight_$466_memory_ptr_$6_memory_ptr",
+                        "typeIdentifier": "t_array$_t_struct$_Flight_$484_memory_ptr_$6_memory_ptr",
                         "typeString": "struct Flight[6]"
                       },
                       "typeName": {
                         "baseType": {
-                          "id": 231,
+                          "id": 249,
                           "nodeType": "UserDefinedTypeName",
                           "pathNode": {
-                            "id": 230,
+                            "id": 248,
                             "name": "Flight",
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 466,
+                            "referencedDeclaration": 484,
                             "src": "377:6:1"
                           },
-                          "referencedDeclaration": 466,
+                          "referencedDeclaration": 484,
                           "src": "377:6:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Flight_$466_storage_ptr",
+                            "typeIdentifier": "t_struct$_Flight_$484_storage_ptr",
                             "typeString": "struct Flight"
                           }
                         },
-                        "id": 232,
+                        "id": 250,
                         "length": {
                           "hexValue": "36",
-                          "id": 229,
+                          "id": 247,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -12452,21 +12455,21 @@
                         "nodeType": "ArrayTypeName",
                         "src": "377:9:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Flight_$466_storage_$6_storage_ptr",
+                          "typeIdentifier": "t_array$_t_struct$_Flight_$484_storage_$6_storage_ptr",
                           "typeString": "struct Flight[6]"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 271,
+                  "id": 289,
                   "initialValue": {
                     "components": [
                       {
                         "arguments": [
                           {
                             "hexValue": "4344313233",
-                            "id": 235,
+                            "id": 253,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12482,7 +12485,7 @@
                           },
                           {
                             "hexValue": "4d4144",
-                            "id": 236,
+                            "id": 254,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12498,7 +12501,7 @@
                           },
                           {
                             "hexValue": "564152",
-                            "id": 237,
+                            "id": 255,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12514,7 +12517,7 @@
                           },
                           {
                             "hexValue": "35",
-                            "id": 238,
+                            "id": 256,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12548,18 +12551,18 @@
                               "typeString": "int_const 5"
                             }
                           ],
-                          "id": 234,
+                          "id": 252,
                           "name": "Flight",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 466,
+                          "referencedDeclaration": 484,
                           "src": "423:6:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Flight_$466_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Flight_$484_storage_ptr_$",
                             "typeString": "type(struct Flight storage pointer)"
                           }
                         },
-                        "id": 239,
+                        "id": 257,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -12575,7 +12578,7 @@
                         "src": "423:69:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                          "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                           "typeString": "struct Flight memory"
                         }
                       },
@@ -12583,7 +12586,7 @@
                         "arguments": [
                           {
                             "hexValue": "4344343536",
-                            "id": 241,
+                            "id": 259,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12599,7 +12602,7 @@
                           },
                           {
                             "hexValue": "484156",
-                            "id": 242,
+                            "id": 260,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12615,7 +12618,7 @@
                           },
                           {
                             "hexValue": "4d4941",
-                            "id": 243,
+                            "id": 261,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12631,7 +12634,7 @@
                           },
                           {
                             "hexValue": "32",
-                            "id": 244,
+                            "id": 262,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12665,18 +12668,18 @@
                               "typeString": "int_const 2"
                             }
                           ],
-                          "id": 240,
+                          "id": 258,
                           "name": "Flight",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 466,
+                          "referencedDeclaration": 484,
                           "src": "507:6:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Flight_$466_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Flight_$484_storage_ptr_$",
                             "typeString": "type(struct Flight storage pointer)"
                           }
                         },
-                        "id": 245,
+                        "id": 263,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -12692,7 +12695,7 @@
                         "src": "507:69:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                          "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                           "typeString": "struct Flight memory"
                         }
                       },
@@ -12700,7 +12703,7 @@
                         "arguments": [
                           {
                             "hexValue": "4344373638",
-                            "id": 247,
+                            "id": 265,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12716,7 +12719,7 @@
                           },
                           {
                             "hexValue": "544f4b",
-                            "id": 248,
+                            "id": 266,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12732,7 +12735,7 @@
                           },
                           {
                             "hexValue": "414d53",
-                            "id": 249,
+                            "id": 267,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12748,7 +12751,7 @@
                           },
                           {
                             "hexValue": "36",
-                            "id": 250,
+                            "id": 268,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12782,18 +12785,18 @@
                               "typeString": "int_const 6"
                             }
                           ],
-                          "id": 246,
+                          "id": 264,
                           "name": "Flight",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 466,
+                          "referencedDeclaration": 484,
                           "src": "591:6:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Flight_$466_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Flight_$484_storage_ptr_$",
                             "typeString": "type(struct Flight storage pointer)"
                           }
                         },
-                        "id": 251,
+                        "id": 269,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -12809,7 +12812,7 @@
                         "src": "591:69:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                          "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                           "typeString": "struct Flight memory"
                         }
                       },
@@ -12817,7 +12820,7 @@
                         "arguments": [
                           {
                             "hexValue": "5558373638",
-                            "id": 253,
+                            "id": 271,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12833,7 +12836,7 @@
                           },
                           {
                             "hexValue": "4d4144",
-                            "id": 254,
+                            "id": 272,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12849,7 +12852,7 @@
                           },
                           {
                             "hexValue": "414750",
-                            "id": 255,
+                            "id": 273,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12865,7 +12868,7 @@
                           },
                           {
                             "hexValue": "32",
-                            "id": 256,
+                            "id": 274,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12899,18 +12902,18 @@
                               "typeString": "int_const 2"
                             }
                           ],
-                          "id": 252,
+                          "id": 270,
                           "name": "Flight",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 466,
+                          "referencedDeclaration": 484,
                           "src": "675:6:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Flight_$466_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Flight_$484_storage_ptr_$",
                             "typeString": "type(struct Flight storage pointer)"
                           }
                         },
-                        "id": 257,
+                        "id": 275,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -12926,7 +12929,7 @@
                         "src": "675:69:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                          "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                           "typeString": "struct Flight memory"
                         }
                       },
@@ -12934,7 +12937,7 @@
                         "arguments": [
                           {
                             "hexValue": "4458373638",
-                            "id": 259,
+                            "id": 277,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12950,7 +12953,7 @@
                           },
                           {
                             "hexValue": "4d4144",
-                            "id": 260,
+                            "id": 278,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12966,7 +12969,7 @@
                           },
                           {
                             "hexValue": "43554e",
-                            "id": 261,
+                            "id": 279,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -12982,7 +12985,7 @@
                           },
                           {
                             "hexValue": "34",
-                            "id": 262,
+                            "id": 280,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -13016,18 +13019,18 @@
                               "typeString": "int_const 4"
                             }
                           ],
-                          "id": 258,
+                          "id": 276,
                           "name": "Flight",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 466,
+                          "referencedDeclaration": 484,
                           "src": "759:6:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Flight_$466_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Flight_$484_storage_ptr_$",
                             "typeString": "type(struct Flight storage pointer)"
                           }
                         },
-                        "id": 263,
+                        "id": 281,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -13043,7 +13046,7 @@
                         "src": "759:69:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                          "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                           "typeString": "struct Flight memory"
                         }
                       },
@@ -13051,7 +13054,7 @@
                         "arguments": [
                           {
                             "hexValue": "4458373639",
-                            "id": 265,
+                            "id": 283,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -13067,7 +13070,7 @@
                           },
                           {
                             "hexValue": "504152",
-                            "id": 266,
+                            "id": 284,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -13083,7 +13086,7 @@
                           },
                           {
                             "hexValue": "4c4f4e",
-                            "id": 267,
+                            "id": 285,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -13099,7 +13102,7 @@
                           },
                           {
                             "hexValue": "32",
-                            "id": 268,
+                            "id": 286,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -13133,18 +13136,18 @@
                               "typeString": "int_const 2"
                             }
                           ],
-                          "id": 264,
+                          "id": 282,
                           "name": "Flight",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 466,
+                          "referencedDeclaration": 484,
                           "src": "843:6:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Flight_$466_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Flight_$484_storage_ptr_$",
                             "typeString": "type(struct Flight storage pointer)"
                           }
                         },
-                        "id": 269,
+                        "id": 287,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -13160,12 +13163,12 @@
                         "src": "843:69:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                          "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                           "typeString": "struct Flight memory"
                         }
                       }
                     ],
-                    "id": 270,
+                    "id": 288,
                     "isConstant": false,
                     "isInlineArray": true,
                     "isLValue": false,
@@ -13174,7 +13177,7 @@
                     "nodeType": "TupleExpression",
                     "src": "408:515:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_Flight_$466_memory_ptr_$6_memory_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_Flight_$484_memory_ptr_$6_memory_ptr",
                       "typeString": "struct Flight memory[6] memory"
                     }
                   },
@@ -13183,7 +13186,7 @@
                 },
                 {
                   "body": {
-                    "id": 289,
+                    "id": 307,
                     "nodeType": "Block",
                     "src": "985:52:1",
                     "statements": [
@@ -13192,24 +13195,24 @@
                           "arguments": [
                             {
                               "baseExpression": {
-                                "id": 284,
+                                "id": 302,
                                 "name": "seedFlights",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 233,
+                                "referencedDeclaration": 251,
                                 "src": "1010:11:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_array$_t_struct$_Flight_$466_memory_ptr_$6_memory_ptr",
+                                  "typeIdentifier": "t_array$_t_struct$_Flight_$484_memory_ptr_$6_memory_ptr",
                                   "typeString": "struct Flight memory[6] memory"
                                 }
                               },
-                              "id": 286,
+                              "id": 304,
                               "indexExpression": {
-                                "id": 285,
+                                "id": 303,
                                 "name": "i",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 273,
+                                "referencedDeclaration": 291,
                                 "src": "1022:1:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -13223,7 +13226,7 @@
                               "nodeType": "IndexAccess",
                               "src": "1010:14:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                                "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                                 "typeString": "struct Flight memory"
                               }
                             }
@@ -13231,22 +13234,22 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                                "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                                 "typeString": "struct Flight memory"
                               }
                             ],
-                            "id": 283,
+                            "id": 301,
                             "name": "addFlight",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 342,
+                            "referencedDeclaration": 360,
                             "src": "1000:9:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Flight_$466_memory_ptr_$returns$__$",
+                              "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Flight_$484_memory_ptr_$returns$__$",
                               "typeString": "function (struct Flight memory)"
                             }
                           },
-                          "id": 287,
+                          "id": 305,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -13261,7 +13264,7 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 288,
+                        "id": 306,
                         "nodeType": "ExpressionStatement",
                         "src": "1000:25:1"
                       }
@@ -13272,17 +13275,17 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 279,
+                    "id": 297,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 276,
+                      "id": 294,
                       "name": "i",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 273,
+                      "referencedDeclaration": 291,
                       "src": "956:1:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -13293,18 +13296,18 @@
                     "operator": "<",
                     "rightExpression": {
                       "expression": {
-                        "id": 277,
+                        "id": 295,
                         "name": "seedFlights",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 233,
+                        "referencedDeclaration": 251,
                         "src": "960:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Flight_$466_memory_ptr_$6_memory_ptr",
+                          "typeIdentifier": "t_array$_t_struct$_Flight_$484_memory_ptr_$6_memory_ptr",
                           "typeString": "struct Flight memory[6] memory"
                         }
                       },
-                      "id": 278,
+                      "id": 296,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -13323,20 +13326,20 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 290,
+                  "id": 308,
                   "initializationExpression": {
                     "assignments": [
-                      273
+                      291
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 273,
+                        "id": 291,
                         "mutability": "mutable",
                         "name": "i",
                         "nameLocation": "949:1:1",
                         "nodeType": "VariableDeclaration",
-                        "scope": 290,
+                        "scope": 308,
                         "src": "941:9:1",
                         "stateVariable": false,
                         "storageLocation": "default",
@@ -13345,7 +13348,7 @@
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 272,
+                          "id": 290,
                           "name": "uint256",
                           "nodeType": "ElementaryTypeName",
                           "src": "941:7:1",
@@ -13357,10 +13360,10 @@
                         "visibility": "internal"
                       }
                     ],
-                    "id": 275,
+                    "id": 293,
                     "initialValue": {
                       "hexValue": "30",
-                      "id": 274,
+                      "id": 292,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -13379,7 +13382,7 @@
                   },
                   "loopExpression": {
                     "expression": {
-                      "id": 281,
+                      "id": 299,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -13389,11 +13392,11 @@
                       "prefix": false,
                       "src": "980:3:1",
                       "subExpression": {
-                        "id": 280,
+                        "id": 298,
                         "name": "i",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 273,
+                        "referencedDeclaration": 291,
                         "src": "980:1:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -13405,7 +13408,7 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 282,
+                    "id": 300,
                     "nodeType": "ExpressionStatement",
                     "src": "980:3:1"
                   },
@@ -13414,7 +13417,7 @@
                 }
               ]
             },
-            "id": 292,
+            "id": 310,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -13422,18 +13425,18 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 226,
+              "id": 244,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "363:2:1"
             },
             "returnParameters": {
-              "id": 227,
+              "id": 245,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "366:0:1"
             },
-            "scope": 385,
+            "scope": 403,
             "src": "352:692:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -13441,7 +13444,7 @@
           },
           {
             "body": {
-              "id": 341,
+              "id": 359,
               "nodeType": "Block",
               "src": "1112:339:1",
               "statements": [
@@ -13449,7 +13452,7 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 305,
+                        "id": 323,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -13462,25 +13465,25 @@
                           "arguments": [
                             {
                               "expression": {
-                                "id": 302,
+                                "id": 320,
                                 "name": "flight",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 295,
+                                "referencedDeclaration": 313,
                                 "src": "1151:6:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                                  "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                                   "typeString": "struct Flight memory"
                                 }
                               },
-                              "id": 303,
+                              "id": 321,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "number",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 459,
+                              "referencedDeclaration": 477,
                               "src": "1151:13:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_string_memory_ptr",
@@ -13495,18 +13498,18 @@
                                 "typeString": "string memory"
                               }
                             ],
-                            "id": 301,
+                            "id": 319,
                             "name": "isFlightAvailiable",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 354,
+                            "referencedDeclaration": 372,
                             "src": "1132:18:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$_t_string_memory_ptr_$returns$_t_bool_$",
                               "typeString": "function (string memory) view returns (bool)"
                             }
                           },
-                          "id": 304,
+                          "id": 322,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -13528,7 +13531,7 @@
                       },
                       {
                         "hexValue": "466c6967687420616c72656164792072656769737465726564",
-                        "id": 306,
+                        "id": 324,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -13554,7 +13557,7 @@
                           "typeString": "literal_string \"Flight already registered\""
                         }
                       ],
-                      "id": 300,
+                      "id": 318,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -13568,7 +13571,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 307,
+                    "id": 325,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13583,7 +13586,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 308,
+                  "id": 326,
                   "nodeType": "ExpressionStatement",
                   "src": "1123:72:1"
                 },
@@ -13595,32 +13598,32 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 313,
+                        "id": 331,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "expression": {
-                            "id": 310,
+                            "id": 328,
                             "name": "flight",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 295,
+                            "referencedDeclaration": 313,
                             "src": "1214:6:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                              "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                               "typeString": "struct Flight memory"
                             }
                           },
-                          "id": 311,
+                          "id": 329,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "price",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 465,
+                          "referencedDeclaration": 483,
                           "src": "1214:12:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -13631,7 +13634,7 @@
                         "operator": ">=",
                         "rightExpression": {
                           "hexValue": "31",
-                          "id": 312,
+                          "id": 330,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -13653,7 +13656,7 @@
                       },
                       {
                         "hexValue": "41206c6f77657220707269636520636f756c64206861636b2074686520636f6e7472616374",
-                        "id": 314,
+                        "id": 332,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -13679,7 +13682,7 @@
                           "typeString": "literal_string \"A lower price could hack the contract\""
                         }
                       ],
-                      "id": 309,
+                      "id": 327,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -13693,7 +13696,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 315,
+                    "id": 333,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13708,52 +13711,52 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 316,
+                  "id": 334,
                   "nodeType": "ExpressionStatement",
                   "src": "1206:67:1"
                 },
                 {
                   "expression": {
-                    "id": 322,
+                    "id": 340,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 317,
+                        "id": 335,
                         "name": "availableFlights",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 216,
+                        "referencedDeclaration": 234,
                         "src": "1284:16:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
                           "typeString": "mapping(string memory => bool)"
                         }
                       },
-                      "id": 320,
+                      "id": 338,
                       "indexExpression": {
                         "expression": {
-                          "id": 318,
+                          "id": 336,
                           "name": "flight",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 295,
+                          "referencedDeclaration": 313,
                           "src": "1301:6:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                            "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                             "typeString": "struct Flight memory"
                           }
                         },
-                        "id": 319,
+                        "id": 337,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "number",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 459,
+                        "referencedDeclaration": 477,
                         "src": "1301:13:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -13775,7 +13778,7 @@
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "74727565",
-                      "id": 321,
+                      "id": 339,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -13795,52 +13798,52 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 323,
+                  "id": 341,
                   "nodeType": "ExpressionStatement",
                   "src": "1284:38:1"
                 },
                 {
                   "expression": {
-                    "id": 329,
+                    "id": 347,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 324,
+                        "id": 342,
                         "name": "flights",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 212,
+                        "referencedDeclaration": 230,
                         "src": "1333:7:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Flight_$466_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Flight_$484_storage_$",
                           "typeString": "mapping(string memory => struct Flight storage ref)"
                         }
                       },
-                      "id": 327,
+                      "id": 345,
                       "indexExpression": {
                         "expression": {
-                          "id": 325,
+                          "id": 343,
                           "name": "flight",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 295,
+                          "referencedDeclaration": 313,
                           "src": "1341:6:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                            "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                             "typeString": "struct Flight memory"
                           }
                         },
-                        "id": 326,
+                        "id": 344,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "number",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 459,
+                        "referencedDeclaration": 477,
                         "src": "1341:13:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -13854,31 +13857,31 @@
                       "nodeType": "IndexAccess",
                       "src": "1333:22:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Flight_$466_storage",
+                        "typeIdentifier": "t_struct$_Flight_$484_storage",
                         "typeString": "struct Flight storage ref"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 328,
+                      "id": 346,
                       "name": "flight",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 295,
+                      "referencedDeclaration": 313,
                       "src": "1358:6:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                        "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                         "typeString": "struct Flight memory"
                       }
                     },
                     "src": "1333:31:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Flight_$466_storage",
+                      "typeIdentifier": "t_struct$_Flight_$484_storage",
                       "typeString": "struct Flight storage ref"
                     }
                   },
-                  "id": 330,
+                  "id": 348,
                   "nodeType": "ExpressionStatement",
                   "src": "1333:31:1"
                 },
@@ -13886,14 +13889,14 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 334,
+                        "id": 352,
                         "name": "flight",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 295,
+                        "referencedDeclaration": 313,
                         "src": "1401:6:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                          "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                           "typeString": "struct Flight memory"
                         }
                       }
@@ -13901,23 +13904,23 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                          "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                           "typeString": "struct Flight memory"
                         }
                       ],
                       "expression": {
-                        "id": 331,
+                        "id": 349,
                         "name": "availableFlightsList",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 220,
+                        "referencedDeclaration": 238,
                         "src": "1375:20:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Flight_$466_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_Flight_$484_storage_$dyn_storage",
                           "typeString": "struct Flight storage ref[] storage ref"
                         }
                       },
-                      "id": 333,
+                      "id": 351,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -13926,11 +13929,11 @@
                       "nodeType": "MemberAccess",
                       "src": "1375:25:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_Flight_$466_storage_$dyn_storage_ptr_$_t_struct$_Flight_$466_storage_$returns$__$bound_to$_t_array$_t_struct$_Flight_$466_storage_$dyn_storage_ptr_$",
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_Flight_$484_storage_$dyn_storage_ptr_$_t_struct$_Flight_$484_storage_$returns$__$bound_to$_t_array$_t_struct$_Flight_$484_storage_$dyn_storage_ptr_$",
                         "typeString": "function (struct Flight storage ref[] storage pointer,struct Flight storage ref)"
                       }
                     },
-                    "id": 335,
+                    "id": 353,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13945,7 +13948,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 336,
+                  "id": 354,
                   "nodeType": "ExpressionStatement",
                   "src": "1375:33:1"
                 },
@@ -13953,14 +13956,14 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 338,
+                        "id": 356,
                         "name": "flight",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 295,
+                        "referencedDeclaration": 313,
                         "src": "1436:6:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                          "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                           "typeString": "struct Flight memory"
                         }
                       }
@@ -13968,22 +13971,22 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                          "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                           "typeString": "struct Flight memory"
                         }
                       ],
-                      "id": 337,
+                      "id": 355,
                       "name": "FlightAdded",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 225,
+                      "referencedDeclaration": 243,
                       "src": "1424:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_struct$_Flight_$466_memory_ptr_$returns$__$",
+                        "typeIdentifier": "t_function_event_nonpayable$_t_struct$_Flight_$484_memory_ptr_$returns$__$",
                         "typeString": "function (struct Flight memory)"
                       }
                     },
-                    "id": 339,
+                    "id": 357,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13998,26 +14001,26 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 340,
+                  "id": 358,
                   "nodeType": "EmitStatement",
                   "src": "1419:24:1"
                 }
               ]
             },
             "functionSelector": "8cde993d",
-            "id": 342,
+            "id": 360,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": [],
-                "id": 298,
+                "id": 316,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 297,
+                  "id": 315,
                   "name": "onlyOwner",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 443,
+                  "referencedDeclaration": 461,
                   "src": "1100:9:1"
                 },
                 "nodeType": "ModifierInvocation",
@@ -14028,38 +14031,38 @@
             "nameLocation": "1061:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 296,
+              "id": 314,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 295,
+                  "id": 313,
                   "mutability": "mutable",
                   "name": "flight",
                   "nameLocation": "1085:6:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 342,
+                  "scope": 360,
                   "src": "1071:20:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                    "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                     "typeString": "struct Flight"
                   },
                   "typeName": {
-                    "id": 294,
+                    "id": 312,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 293,
+                      "id": 311,
                       "name": "Flight",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 466,
+                      "referencedDeclaration": 484,
                       "src": "1071:6:1"
                     },
-                    "referencedDeclaration": 466,
+                    "referencedDeclaration": 484,
                     "src": "1071:6:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Flight_$466_storage_ptr",
+                      "typeIdentifier": "t_struct$_Flight_$484_storage_ptr",
                       "typeString": "struct Flight"
                     }
                   },
@@ -14069,12 +14072,12 @@
               "src": "1070:22:1"
             },
             "returnParameters": {
-              "id": 299,
+              "id": 317,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1112:0:1"
             },
-            "scope": 385,
+            "scope": 403,
             "src": "1052:399:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -14082,31 +14085,31 @@
           },
           {
             "body": {
-              "id": 353,
+              "id": 371,
               "nodeType": "Block",
               "src": "1535:50:1",
               "statements": [
                 {
                   "expression": {
                     "baseExpression": {
-                      "id": 349,
+                      "id": 367,
                       "name": "availableFlights",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 216,
+                      "referencedDeclaration": 234,
                       "src": "1553:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_bool_$",
                         "typeString": "mapping(string memory => bool)"
                       }
                     },
-                    "id": 351,
+                    "id": 369,
                     "indexExpression": {
-                      "id": 350,
+                      "id": 368,
                       "name": "number",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 344,
+                      "referencedDeclaration": 362,
                       "src": "1570:6:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -14124,15 +14127,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 348,
-                  "id": 352,
+                  "functionReturnParameters": 366,
+                  "id": 370,
                   "nodeType": "Return",
                   "src": "1546:31:1"
                 }
               ]
             },
             "functionSelector": "79fb7274",
-            "id": 354,
+            "id": 372,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -14140,17 +14143,17 @@
             "nameLocation": "1468:18:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 345,
+              "id": 363,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 344,
+                  "id": 362,
                   "mutability": "mutable",
                   "name": "number",
                   "nameLocation": "1501:6:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 354,
+                  "scope": 372,
                   "src": "1487:20:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -14159,7 +14162,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 343,
+                    "id": 361,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1487:6:1",
@@ -14174,17 +14177,17 @@
               "src": "1486:22:1"
             },
             "returnParameters": {
-              "id": 348,
+              "id": 366,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 347,
+                  "id": 365,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 354,
+                  "scope": 372,
                   "src": "1529:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -14193,7 +14196,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 346,
+                    "id": 364,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1529:4:1",
@@ -14207,7 +14210,7 @@
               ],
               "src": "1528:6:1"
             },
-            "scope": 385,
+            "scope": 403,
             "src": "1459:126:1",
             "stateMutability": "view",
             "virtual": false,
@@ -14215,32 +14218,32 @@
           },
           {
             "body": {
-              "id": 363,
+              "id": 381,
               "nodeType": "Block",
               "src": "1663:46:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 361,
+                    "id": 379,
                     "name": "availableFlightsList",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 220,
+                    "referencedDeclaration": 238,
                     "src": "1681:20:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_Flight_$466_storage_$dyn_storage",
+                      "typeIdentifier": "t_array$_t_struct$_Flight_$484_storage_$dyn_storage",
                       "typeString": "struct Flight storage ref[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 360,
-                  "id": 362,
+                  "functionReturnParameters": 378,
+                  "id": 380,
                   "nodeType": "Return",
                   "src": "1674:27:1"
                 }
               ]
             },
             "functionSelector": "1a9ffee7",
-            "id": 364,
+            "id": 382,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -14248,53 +14251,53 @@
             "nameLocation": "1602:19:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 355,
+              "id": 373,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1621:2:1"
             },
             "returnParameters": {
-              "id": 360,
+              "id": 378,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 359,
+                  "id": 377,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 364,
+                  "scope": 382,
                   "src": "1646:15:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_Flight_$466_memory_ptr_$dyn_memory_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_Flight_$484_memory_ptr_$dyn_memory_ptr",
                     "typeString": "struct Flight[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 357,
+                      "id": 375,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 356,
+                        "id": 374,
                         "name": "Flight",
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 466,
+                        "referencedDeclaration": 484,
                         "src": "1646:6:1"
                       },
-                      "referencedDeclaration": 466,
+                      "referencedDeclaration": 484,
                       "src": "1646:6:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Flight_$466_storage_ptr",
+                        "typeIdentifier": "t_struct$_Flight_$484_storage_ptr",
                         "typeString": "struct Flight"
                       }
                     },
-                    "id": 358,
+                    "id": 376,
                     "nodeType": "ArrayTypeName",
                     "src": "1646:8:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_Flight_$466_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_Flight_$484_storage_$dyn_storage_ptr",
                       "typeString": "struct Flight[]"
                     }
                   },
@@ -14303,7 +14306,7 @@
               ],
               "src": "1645:17:1"
             },
-            "scope": 385,
+            "scope": 403,
             "src": "1593:116:1",
             "stateMutability": "view",
             "virtual": false,
@@ -14311,7 +14314,7 @@
           },
           {
             "body": {
-              "id": 383,
+              "id": 401,
               "nodeType": "Block",
               "src": "1801:124:1",
               "statements": [
@@ -14321,11 +14324,11 @@
                       {
                         "arguments": [
                           {
-                            "id": 374,
+                            "id": 392,
                             "name": "flightNumber",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 366,
+                            "referencedDeclaration": 384,
                             "src": "1839:12:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
@@ -14340,18 +14343,18 @@
                               "typeString": "string memory"
                             }
                           ],
-                          "id": 373,
+                          "id": 391,
                           "name": "isFlightAvailiable",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 354,
+                          "referencedDeclaration": 372,
                           "src": "1820:18:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_string_memory_ptr_$returns$_t_bool_$",
                             "typeString": "function (string memory) view returns (bool)"
                           }
                         },
-                        "id": 375,
+                        "id": 393,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14368,7 +14371,7 @@
                       },
                       {
                         "hexValue": "466c69676874206e6f7420617661696c61626c65",
-                        "id": 376,
+                        "id": 394,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -14394,7 +14397,7 @@
                           "typeString": "literal_string \"Flight not available\""
                         }
                       ],
-                      "id": 372,
+                      "id": 390,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -14408,7 +14411,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 377,
+                    "id": 395,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14423,31 +14426,31 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 378,
+                  "id": 396,
                   "nodeType": "ExpressionStatement",
                   "src": "1812:65:1"
                 },
                 {
                   "expression": {
                     "baseExpression": {
-                      "id": 379,
+                      "id": 397,
                       "name": "flights",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 212,
+                      "referencedDeclaration": 230,
                       "src": "1895:7:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Flight_$466_storage_$",
+                        "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Flight_$484_storage_$",
                         "typeString": "mapping(string memory => struct Flight storage ref)"
                       }
                     },
-                    "id": 381,
+                    "id": 399,
                     "indexExpression": {
-                      "id": 380,
+                      "id": 398,
                       "name": "flightNumber",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 366,
+                      "referencedDeclaration": 384,
                       "src": "1903:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -14461,19 +14464,19 @@
                     "nodeType": "IndexAccess",
                     "src": "1895:21:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Flight_$466_storage",
+                      "typeIdentifier": "t_struct$_Flight_$484_storage",
                       "typeString": "struct Flight storage ref"
                     }
                   },
-                  "functionReturnParameters": 371,
-                  "id": 382,
+                  "functionReturnParameters": 389,
+                  "id": 400,
                   "nodeType": "Return",
                   "src": "1888:28:1"
                 }
               ]
             },
             "functionSelector": "ce059596",
-            "id": 384,
+            "id": 402,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -14481,17 +14484,17 @@
             "nameLocation": "1726:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 367,
+              "id": 385,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 366,
+                  "id": 384,
                   "mutability": "mutable",
                   "name": "flightNumber",
                   "nameLocation": "1750:12:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 384,
+                  "scope": 402,
                   "src": "1736:26:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -14500,7 +14503,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 365,
+                    "id": 383,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1736:6:1",
@@ -14515,38 +14518,38 @@
               "src": "1735:28:1"
             },
             "returnParameters": {
-              "id": 371,
+              "id": 389,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 370,
+                  "id": 388,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 384,
+                  "scope": 402,
                   "src": "1786:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Flight_$466_memory_ptr",
+                    "typeIdentifier": "t_struct$_Flight_$484_memory_ptr",
                     "typeString": "struct Flight"
                   },
                   "typeName": {
-                    "id": 369,
+                    "id": 387,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 368,
+                      "id": 386,
                       "name": "Flight",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 466,
+                      "referencedDeclaration": 484,
                       "src": "1786:6:1"
                     },
-                    "referencedDeclaration": 466,
+                    "referencedDeclaration": 484,
                     "src": "1786:6:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Flight_$466_storage_ptr",
+                      "typeIdentifier": "t_struct$_Flight_$484_storage_ptr",
                       "typeString": "struct Flight"
                     }
                   },
@@ -14555,14 +14558,14 @@
               ],
               "src": "1785:15:1"
             },
-            "scope": 385,
+            "scope": 403,
             "src": "1717:208:1",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 386,
+        "scope": 404,
         "src": "129:1799:1",
         "usedErrors": []
       }
@@ -14575,50 +14578,15 @@
   },
   "networks": {
     "5777": {
-      "events": {
-        "0xddd197767c7a2b1a3fa71853e3fd46419b663175947e8a97d59d69a40de9aeda": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "components": [
-                {
-                  "internalType": "string",
-                  "name": "number",
-                  "type": "string"
-                },
-                {
-                  "internalType": "string",
-                  "name": "origin",
-                  "type": "string"
-                },
-                {
-                  "internalType": "string",
-                  "name": "destination",
-                  "type": "string"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "price",
-                  "type": "uint256"
-                }
-              ],
-              "indexed": false,
-              "internalType": "struct Flight",
-              "name": "flight",
-              "type": "tuple"
-            }
-          ],
-          "name": "FlightAdded",
-          "type": "event"
-        }
-      },
+      "events": {},
       "links": {},
-      "address": "0xa650DfE4383E9C0579Dcaaf93585960b03943d69",
-      "transactionHash": "0xd487048a86be574d4e09db87927f2da43622f43bc6065113130c74ef46e2ef4f"
+      "address": "0xF0bE8e1150DBD92150dE5743bfE6539cEe97eaf9",
+      "transactionHash": "0x8c3d11fcaca52655792c12082553a787912f2272d59db68185e87ff14454356d"
     }
   },
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-06-13T11:38:13.674Z",
+  "updatedAt": "2022-06-24T09:28:10.650Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -19,8 +19,18 @@ function App() {
 
   const exchangePoints = async () => {
     const airlineService = await AirlineService.getInstance();
-    await airlineService.reclaimPoints(account);
-    alert("Operation Finished! Please refresh");
+    try {
+      await airlineService.reclaimPoints(account);
+      alert("Operation Finished! Please refresh");
+    } catch (error) {
+      console.log(error);
+      if(error.message.includes("Not enought points")){
+        alert("No enough points");
+      }
+      else{
+        alert("In this moment it is not possible to reclaim points. Try later");
+      }
+    }
   }
 
   const updateBalance = useCallback(
@@ -30,26 +40,40 @@ function App() {
       setBalance(balance);
     },
     [web3, account],
-  )
+  );
 
 
   useEffect(() => {
     (async () => {
       updateBalance();
       const airlineService = await AirlineService.getInstance();
+      // Events
       let flightBookedEvent = airlineService.getflightBookedEvent();
+      let pointsRedeemedEvent = airlineService.getPointsRedeemedEvent();
+      console.log("pointsRedeemedEvent", pointsRedeemedEvent);
+      console.log("flightBookedEvent", flightBookedEvent);
+      //Remove Old Listeners
       flightBookedEvent.removeAllListeners();
+      pointsRedeemedEvent.removeAllListeners();
 
-      flightBookedEvent.on('data', ((event) => {
+      // Create new Listeners
+      flightBookedEvent.on('data', (event) => {
         if (account === event.args.user.toLowerCase()) {
           updateBalance();
           airlineService.getUser(account).then(user => setUserClient(user));
         }
-      }));
+      });
 
+      pointsRedeemedEvent.on('data', (event) => {
+        if (account === event.args.user.toLowerCase()) {
+          updateBalance();
+          airlineService.getUser(account).then(user => setUserClient(user));
+        }
+      });
       return () => {
         //Remove subscription
         flightBookedEvent.removeAllListener();
+        pointsRedeemedEvent.removeAllListeners();
       }
     })();
   }, [web3, account, updateBalance, setUserClient]);

@@ -6,14 +6,14 @@ import { Web3Context } from './Web3Context'
 export const Web3Provider = ({ children }) => {
   const web3 = useWeb3();
   const [account, setAccount] = useState();
-  
+
   useEffect(() => {
     if (web3) {
       window.ethereum.on("accountsChanged", async (accounts) => {
-        setAccount(accounts[0]);
+        setAccount(accounts[0].toLowerCase());
       });
 
-      web3.eth.getAccounts().then(accounts => setAccount(accounts[0]));
+      web3.eth.getAccounts().then(accounts => setAccount(accounts[0].toLowerCase()));
       setTimeout(() => account && console.error("No Account Connected!"), 5000);
     }
   }, [web3])

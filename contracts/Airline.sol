@@ -13,6 +13,7 @@ contract Airline is Owner {
  
     mapping(address => User) users;
     event FlightBooked(address indexed user, Flight flight);
+    event PointsRedeemed(address indexed user, uint amount);
     uint etherPerPoint = 0.2 ether;
     Flights flightContract;
     
@@ -38,6 +39,7 @@ contract Airline is Owner {
         uint points = users[msg.sender].loyalityPoints;
         users[msg.sender].loyalityPoints = 0;
         payable(msg.sender).transfer(points * etherPerPoint * 1**18);
+        emit PointsRedeemed(msg.sender, points * etherPerPoint * 1**18);
     }
 
     function getBalance() external view onlyOwner() returns(uint) {
