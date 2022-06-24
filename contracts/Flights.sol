@@ -12,12 +12,12 @@ contract Flights is Owner {
 
     constructor() {
         Flight[6] memory seedFlights = [
-            Flight({ number: "CD123", origin:"MAD", destination:"VAR", price: 5}),
-            Flight({ number: "CD456", origin:"HAV", destination:"MIA", price: 2}),
-            Flight({ number: "CD768", origin:"TOK", destination:"AMS", price: 6}),
-            Flight({ number: "UX768", origin:"MAD", destination:"AGP", price: 2}),
-            Flight({ number: "DX768", origin:"MAD", destination:"CUN", price: 4}),
-            Flight({ number: "DX769", origin:"PAR", destination:"LON", price: 2})
+            Flight({ number: "CD123", origin:"MAD", destination:"VAR", price: 0.01 ether}),
+            Flight({ number: "CD456", origin:"HAV", destination:"MIA", price: 0.02 ether}),
+            Flight({ number: "CD768", origin:"TOK", destination:"AMS", price: 0.06 ether}),
+            Flight({ number: "UX768", origin:"MAD", destination:"AGP", price: 0.02 ether}),
+            Flight({ number: "DX768", origin:"MAD", destination:"CUN", price: 0.04 ether}),
+            Flight({ number: "DX769", origin:"PAR", destination:"LON", price: 0.02 ether})
         ];
 
         for (uint256 i = 0; i < seedFlights.length; i++) {
@@ -27,7 +27,7 @@ contract Flights is Owner {
 
     function addFlight(Flight memory flight) public onlyOwner() {
         require(!isFlightAvailiable(flight.number), "Flight already registered");
-        require(flight.price >= 1, "A lower price could hack the contract");
+        require(flight.price >= 0.01 ether, "A lower price could hack the contract");
         availableFlights[flight.number] = true;
         flights[flight.number] = flight;
         availableFlightsList.push(flight);

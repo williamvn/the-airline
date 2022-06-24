@@ -36,7 +36,7 @@ const BookFlightPopup = ({ onClose }) => {
     e.preventDefault();
     const flightNumber = flight.number;
     const airlineService = await AirlineService.getInstance();
-    const price = await web3.utils.toWei(flightsMap[flightNumber].price);
+    const price = flightsMap[flightNumber].price;
     setIsDisabled(true);
     try {
       await airlineService.bookFlight(flightNumber, account, price);
@@ -76,7 +76,7 @@ const BookFlightPopup = ({ onClose }) => {
           <hr />
           <span>{flight.destination}</span>
         </div>
-        <span>Price: {flight.price} ETH</span>
+        <span>Price: {flight.price && web3.utils.fromWei(flight.price.toString(), 'ether')} ETH</span>
         <br/>
         {isDisabled && <div className="spinner-border text-secondary" role="status">
           <span className="sr-only">Loading...</span>

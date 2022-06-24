@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './FlightList.module.css';
+import { Web3Context } from '../../contexts/Web3Context';
+import { useContext } from 'react';
 
-const FlightList = ({ flights }) => (
+const FlightList = ({ flights }) => {
+  const {provider:web3} = useContext(Web3Context)
 
-  <ul className={styles.FlightList} data-testid="FlightList">
+  return <ul className={styles.FlightList} data-testid="FlightList">
     {
       flights.map((flight, i) =>
         <li key={flight.number + i} className={styles.flight}>
           <div className={styles.header}>
             {flight.number}
             <div className={styles.badge}>
-              {flight.price} ETH
+              {web3.utils.fromWei(flight.price, 'ether')} ETH
             </div>
           </div>
           <div className={styles.route}>
@@ -30,7 +33,7 @@ const FlightList = ({ flights }) => (
       </div>
     }
   </ul>
-);
+};
 
 FlightList.propTypes = {
   number: PropTypes.string,

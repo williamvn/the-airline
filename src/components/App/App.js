@@ -20,8 +20,8 @@ function App() {
   const exchangePoints = async () => {
     const airlineService = await AirlineService.getInstance();
     try {
-      await airlineService.reclaimPoints(account);
-      alert("Operation Finished! Please refresh");
+      airlineService.reclaimPoints(account);
+      alert("Operation In Progress");
     } catch (error) {
       console.log(error);
       if(error.message.includes("Not enought points")){
@@ -50,8 +50,7 @@ function App() {
       // Events
       let flightBookedEvent = airlineService.getflightBookedEvent();
       let pointsRedeemedEvent = airlineService.getPointsRedeemedEvent();
-      console.log("pointsRedeemedEvent", pointsRedeemedEvent);
-      console.log("flightBookedEvent", flightBookedEvent);
+
       //Remove Old Listeners
       flightBookedEvent.removeAllListeners();
       pointsRedeemedEvent.removeAllListeners();
@@ -62,6 +61,9 @@ function App() {
           updateBalance();
           airlineService.getUser(account).then(user => setUserClient(user));
         }
+        else{
+          console.log(event);
+        }
       });
 
       pointsRedeemedEvent.on('data', (event) => {
@@ -70,6 +72,7 @@ function App() {
           airlineService.getUser(account).then(user => setUserClient(user));
         }
       });
+      
       return () => {
         //Remove subscription
         flightBookedEvent.removeAllListener();
