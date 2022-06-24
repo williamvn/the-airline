@@ -7,21 +7,55 @@ import { useAvailableFlights } from '../../Hooks/useAvailableFlights';
 import { useUserClient } from '../../Hooks/useUserClient';
 import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
 import { Web3Context } from '../../contexts/Web3Context';
+import { AirlineService } from '../../services/AirlineService';
+import { useCallback } from 'react';
 
 function App() {
-  const [user, setUser] = useState({ account: "", balance: 0 });
+  const [balance, setBalance] = useState(0);
   const availableFlights = useAvailableFlights();
-  const userClient = useUserClient();
+  const [userClient, setUserClient] = useUserClient();
   const [showBookFlightPopup, setShowBookFlightPopup] = useState(false);
-  const {provider:web3, account} = useContext(Web3Context);
+  const { provider: web3, account } = useContext(Web3Context);
+
+  const exchangePoints = async () => {
+    const airlineService = await AirlineService.getInstance();
+    await airlineService.reclaimPoints(account);
+    alert("Operation Finished! Please refresh");
+  }
+
+  const updateBalance = useCallback(
+    async () => {
+      let balance = (await web3.eth.getBalance(account));
+      balance = web3.utils.fromWei(balance, 'ether');
+      setBalance(balance);
+    },
+    [web3, account],
+  )
+
 
   useEffect(() => {
     (async () => {
-        let balance = (await web3.eth.getBalance(account));
-        balance = web3.utils.fromWei(balance, 'ether');
-        setUser({ account, balance });
+      updateBalance();
+      const airlineService = await AirlineService.getInstance();
+      let flightBookedEvent = airlineService.getflightBookedEvent();
+      flightBookedEvent.removeAllListeners();
+
+      flightBookedEvent.on('data', ((event) => {
+        if (account === event.args.user.toLowerCase()) {
+          updateBalance();
+          airlineService.getUser(account).then(user => setUserClient(user));
+        }
+      }));
+
+      return () => {
+        //Remove subscription
+        flightBookedEvent.removeAllListener();
+      }
     })();
-  }, [web3, account]);
+  }, [web3, account, updateBalance, setUserClient]);
+
+
+
 
   return (
     <div className={styles.App}>
@@ -29,15 +63,15 @@ function App() {
         Wellcome to the airline
         <div className={styles['tool-tip']}>
           <i className="fa fa-user-circle-o" aria-hidden="true"></i>
-          <span className={styles["tool-tip-text"]}>{user.account}</span>
+          <span className={styles["tool-tip-text"]}>{account}</span>
         </div>
       </div>
       <header className={styles["App-header"]}>
         <div className={styles.row}>
           <Panel title="Balance">
-            <ContenLabel content={user.balance + " ETH"}></ContenLabel>
+            <ContenLabel content={balance + " ETH"}></ContenLabel>
           </Panel>
-          <Panel title="Loyality points - refundable ether"  actionIconClass="fa fa-plus-square-o" actionPlaceHolder="Exchange Points for Ether" action={() => setShowBookFlightPopup(true)}>
+          <Panel title="Loyality points - refundable ether" actionIconClass="fa fa-exchange" actionPlaceHolder="Exchange Points for Ether" action={() => exchangePoints()}>
             <ContenLabel content={userClient.loyalityPoints + " points"}></ContenLabel>
           </Panel>
         </div>
@@ -50,7 +84,7 @@ function App() {
           </Panel>
         </div>
       </header>
-      {showBookFlightPopup && <BookFlightPopup onClose={()=> setShowBookFlightPopup(false)}></BookFlightPopup>}
+      {showBookFlightPopup && <BookFlightPopup onClose={() => setShowBookFlightPopup(false)}></BookFlightPopup>}
     </div >
   );
 }

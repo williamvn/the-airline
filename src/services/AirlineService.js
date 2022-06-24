@@ -19,7 +19,14 @@ export class AirlineService {
         return this.airlineContract.bookFlight(flightNumber, {from: account, value: price});
     }
 
-    // onflightBookedEvent() {
-    //     return this.airlineContract.events.FlightBooked({}, (err) => console.log("ERROR:", err));
-    // }
+    getflightBookedEvent() {
+        if(!this.flightBookedEvent) {
+            this.flightBookedEvent = this.airlineContract.FlightBooked();
+        }
+        return this.flightBookedEvent;
+    }
+
+    reclaimPoints(account) {
+        return this.airlineContract.reclaimPoints({from:account});
+    }
 }

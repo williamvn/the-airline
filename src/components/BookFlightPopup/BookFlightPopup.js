@@ -8,7 +8,7 @@ const BookFlightPopup = ({ onClose }) => {
   const availableFlights = useAvailableFlights();
   const [flight, setFlight] = useState({});
   const [flightsMap, setFlightsMap] = useState({});
-  const web3 = useContext(Web3Context);
+  const {provider: web3, account} = useContext(Web3Context);
   const [isDisabled, setIsDisabled] = useState(false);
   const [error, setError] = useState(null);
 
@@ -22,6 +22,7 @@ const BookFlightPopup = ({ onClose }) => {
       }, {});
 
       setFlightsMap(map);
+     
     }
   }, [availableFlights]);
 
@@ -35,8 +36,6 @@ const BookFlightPopup = ({ onClose }) => {
     e.preventDefault();
     const flightNumber = flight.number;
     const airlineService = await AirlineService.getInstance();
-    const accounts = await web3.eth.getAccounts();
-    const account = accounts[0].toLowerCase();
     const price = await web3.utils.toWei(flightsMap[flightNumber].price);
     setIsDisabled(true);
     try {

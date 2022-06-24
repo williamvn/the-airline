@@ -6,6 +6,7 @@ import { Web3Context } from './Web3Context'
 export const Web3Provider = ({ children }) => {
   const web3 = useWeb3();
   const [account, setAccount] = useState();
+  
   useEffect(() => {
     if (web3) {
       window.ethereum.on("accountsChanged", async (accounts) => {

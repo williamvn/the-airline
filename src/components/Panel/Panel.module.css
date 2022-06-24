@@ -61,6 +61,8 @@
     /* Position the tool-tip text - see examples below! */
     position: relative;
     z-index: 1;
+    min-width: 15em;
+    position: absolute
 }
 
 /* Show the tool-tip text when you mouse over the tool-tip container */
