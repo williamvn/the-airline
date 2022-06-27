@@ -2,9 +2,9 @@ const assert = require('assert');
 const Flights = artifacts.require("Flights");
 let flights;
 const flightsList = [
-    ["CD123", "MAD", "VAR", 5],
-    ["CD456", "HAV", "MIA", 2],
-    ["CD768", "TOK", "AMS", 6]
+    ["CD123", "MAD", "VAR", web3.utils.toWei('0.05')],
+    ["CD456", "HAV", "MIA", web3.utils.toWei('0.02')],
+    ["CD768", "TOK", "AMS", web3.utils.toWei('0.06')]
 ]
 
 beforeEach(async () => {

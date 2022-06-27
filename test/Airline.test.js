@@ -4,9 +4,9 @@ const Flights = artifacts.require("Flights");
 let airline;
 let flights;
 const flightsList = [
-    ["CD123", "MAD", "VAR", 5],
-    ["CD456", "HAV", "MIA", 2],
-    ["CD768", "TOK", "AMS", 6]
+    ["CD123", "MAD", "VAR", web3.utils.toWei('0.05')],
+    ["CD456", "HAV", "MIA", web3.utils.toWei('0.02')],
+    ["CD768", "TOK", "AMS", web3.utils.toWei('0.06')]
 ]
 
 beforeEach(async () => {
@@ -19,7 +19,7 @@ contract('Airline', (accounts) => {
         it('should book a flight', async () => {
             // arrange
             await addFlights();
-            const price = web3.utils.toWei(flightsList[0][3].toString());
+            const price = flightsList[0][3];
             const number = flightsList[0][0];
 
             //act
@@ -77,7 +77,7 @@ contract('Airline', (accounts) => {
         it("should not be able to reclaim points since client doesn't have enought purchases", async () => {
             // arrange
             await addFlights();
-            const price = web3.utils.toWei(flightsList[0][3].toString());
+            const price = flightsList[0][3];
             const number = flightsList[0][0];
             await airline.bookFlight(number, { from: accounts[3], value: price });
             
@@ -97,7 +97,7 @@ contract('Airline', (accounts) => {
 });
 
 async function bookFiveFlights(account) {
-    const price = web3.utils.toWei(flightsList[0][3].toString());
+    const price = flightsList[0][3];
     const number = flightsList[0][0];
     for (let i = 0; i < 5; i++) {
         await airline.bookFlight(number, { from: account, value: price });
