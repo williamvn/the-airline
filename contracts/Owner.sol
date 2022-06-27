@@ -16,4 +16,8 @@ contract Owner {
     function changeOwner() external onlyOwner() {
         owner = msg.sender;
     }
+
+    function amIOwner() external view onlyOwner() returns(bool) {
+        return true;
+    }
 }
