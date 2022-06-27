@@ -1,5 +1,6 @@
 .FlightList {
     width: 100%;
+    position: relative;
 }
 
 .flight {
@@ -38,6 +39,7 @@
 }
 
 .center {
-    position: relative;
-    top:10em;
+    position: absolute;
+    top:50%;
+    right: 45%;
 }
