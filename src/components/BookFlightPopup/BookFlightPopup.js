@@ -5,7 +5,7 @@ import { AirlineService } from '../../services/AirlineService';
 import styles from './BookFlightPopup.module.css';
 
 const BookFlightPopup = ({ onClose }) => {
-  const availableFlights = useAvailableFlights();
+  const [availableFlights] = useAvailableFlights();
   const [flight, setFlight] = useState({});
   const [flightsMap, setFlightsMap] = useState({});
   const {provider: web3, account} = useContext(Web3Context);

@@ -9,13 +9,16 @@ import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
 import { Web3Context } from '../../contexts/Web3Context';
 import { AirlineService } from '../../services/AirlineService';
 import { useCallback } from 'react';
+import { FlightService } from '../../services/FlightService';
 
 function App() {
   const [balance, setBalance] = useState(0);
-  const availableFlights = useAvailableFlights();
+  const [availableFlights, setAvailableFlights] = useAvailableFlights();
   const [userClient, setUserClient] = useUserClient();
   const [showBookFlightPopup, setShowBookFlightPopup] = useState(false);
   const { provider: web3, account } = useContext(Web3Context);
+  const [isOwner, setIsOwner] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const exchangePoints = async () => {
     const airlineService = await AirlineService.getInstance();
@@ -24,10 +27,10 @@ function App() {
       alert("Operation In Progress");
     } catch (error) {
       console.log(error);
-      if(error.message.includes("Not enought points")){
+      if (error.message.includes("Not enought points")) {
         alert("No enough points");
       }
-      else{
+      else {
         alert("In this moment it is not possible to reclaim points. Try later");
       }
     }
@@ -42,10 +45,18 @@ function App() {
     [web3, account],
   );
 
+  const setOwnerFlag = useCallback(async () => {
+    const airlineService = await AirlineService.getInstance();
+    airlineService.amIOwner(account).then(value => setIsOwner(value));
+  });
+
+  useEffect(() => {
+    updateBalance();
+    setOwnerFlag();
+  }, [updateBalance, setOwnerFlag, account])
 
   useEffect(() => {
     (async () => {
-      updateBalance();
       const airlineService = await AirlineService.getInstance();
       // Events
       let flightBookedEvent = airlineService.getflightBookedEvent();
@@ -61,7 +72,7 @@ function App() {
           updateBalance();
           airlineService.getUser(account).then(user => setUserClient(user));
         }
-        else{
+        else {
           console.log(event);
         }
       });
@@ -72,17 +83,23 @@ function App() {
           airlineService.getUser(account).then(user => setUserClient(user));
         }
       });
-      
+
       return () => {
         //Remove subscription
         flightBookedEvent.removeAllListener();
         pointsRedeemedEvent.removeAllListeners();
       }
     })();
-  }, [web3, account, updateBalance, setUserClient]);
+  }, [web3, account, setUserClient]);
 
-
-
+  const seedFlights = async () => {
+    setIsLoading(true);
+    const flightService = await FlightService.getInstance();
+    await flightService.seedFlights(web3, account);
+    const newSeedFlights = await flightService.getAvailableFlights();
+    setAvailableFlights(newSeedFlights);
+    setIsLoading(false);
+  }
 
   return (
     <div className={styles.App}>
@@ -103,7 +120,7 @@ function App() {
           </Panel>
         </div>
         <div className={styles.row}>
-          <Panel title="Available Flights" >
+          <Panel title="Available Flights" actionIconClass={availableFlights.length === 0 && isOwner ? "fa fa-flask" : ""} actionPlaceHolder="Seed Flights" action={() => seedFlights()}>
             <FlightList flights={availableFlights}></FlightList>
           </Panel>
           <Panel title="Your flights" actionIconClass="fa fa-plus-square-o" actionPlaceHolder="Book New Flight" action={() => setShowBookFlightPopup(true)}>
@@ -112,6 +129,13 @@ function App() {
         </div>
       </header>
       {showBookFlightPopup && <BookFlightPopup onClose={() => setShowBookFlightPopup(false)}></BookFlightPopup>}
+      {
+        isLoading && <div className={styles.loaderOverlay}>
+          <div class={`spinner-grow text-success ${styles.spinnerLg}`} role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      }
     </div >
   );
 }

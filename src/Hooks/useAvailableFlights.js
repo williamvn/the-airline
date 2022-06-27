@@ -10,5 +10,5 @@ export const useAvailableFlights = () => {
       })();
     }, [])
 
-    return flights;
+    return [flights, setFlights];
 }

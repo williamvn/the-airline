@@ -65,3 +65,22 @@
 .tool-tip:hover .tool-tip-text {
   visibility: visible;
 }
+
+
+.loaderOverlay {
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  background-color: #dadbdd;
+  opacity: 75%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loaderOverlay .spinnerLg {
+  width: 5rem;
+  height: 5rem;
+}
