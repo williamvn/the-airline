@@ -1,6 +1,23 @@
 # Getting Started with Create React App
+This project is an educative Dapp over Ethereum network.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project modelates a decentralized airline where you can:
+- See available flights
+- Buy flights (for each buy the user will be rewarded with loyalty points)
+- See loyalty points
+- See the flights that you have buyed.
+- Exchange loyality points for ether (you must have 5 loyalty points to be able to reclaim)
+
+The project is a monorepo using Truffle framework and solidity for the smart contracts and using React for the UI.
+
+## Dependencies
+- Install [truffle.js](https://trufflesuite.com/)
+- Install [Metamask extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en)
+
+## Setup
+After installed listed dependencies, you will need to first setup a local test ethereum blockchain where you can deploy the contracts. Suggestion use [Ganache](https://trufflesuite.com/ganache/)
+
+Then using `truffle deploy` you will be able to deploy the contracts in your local network.
 
 ## Available Scripts
 
@@ -13,11 +30,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
