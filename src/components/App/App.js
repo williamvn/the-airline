@@ -39,17 +39,13 @@ function App() {
       let pointsRedeemedEvent = airlineService.getPointsRedeemedEvent();
 
       //Remove Old Listeners
-      flightBookedEvent.removeAllListeners();
-      pointsRedeemedEvent.removeAllListeners();
+      removeAllListener([flightBookedEvent, pointsRedeemedEvent]);
 
       // Create new Listeners
       flightBookedEvent.on('data', (event) => {
         if (account === event.args.user.toLowerCase()) {
           updateBalance();
           airlineService.getUser(account).then(user => setUserClient(user));
-        }
-        else {
-          console.log(event);
         }
       });
 
@@ -61,12 +57,17 @@ function App() {
       });
 
       return () => {
-        //Remove subscription
-        flightBookedEvent.removeAllListener();
-        pointsRedeemedEvent.removeAllListeners();
+        //Remove subscriptions
+        removeAllListener([flightBookedEvent, pointsRedeemedEvent]);
       }
     })();
   }, [web3, account, setUserClient, updateBalance]);
+
+  const removeAllListener = (listeners) => {
+    listeners.forEach(l => {
+      l.removeAllListeners();
+    });
+  }
 
   return (
     <div className={styles.App}>
