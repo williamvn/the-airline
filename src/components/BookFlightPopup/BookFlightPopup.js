@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Web3Context } from '../../contexts/Web3Context';
-import { useAvailableFlights } from '../../Hooks/useAvailableFlights';
+import { useAvailableFlights } from '../../hooks/useAvailableFlights';
 import { AirlineService } from '../../services/AirlineService';
 import styles from './BookFlightPopup.module.css';
 
