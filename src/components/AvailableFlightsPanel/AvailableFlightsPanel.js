@@ -6,11 +6,10 @@ import { FlightService } from '../../services/FlightService';
 import FlightList from '../FlightList/FlightList';
 import { Panel } from '../Panel/Panel';
 
-export const AvailableFlightsPanel = () => {
+export const AvailableFlightsPanel = ({ setIsLoading }) => {
     const [availableFlights, setAvailableFlights] = useAvailableFlights();
     const { provider: web3, account } = useContext(Web3Context);
     const [isOwner, setIsOwner] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -33,13 +32,6 @@ export const AvailableFlightsPanel = () => {
             <Panel title="Available Flights" actionIconClass={availableFlights.length === 0 && isOwner ? "fa fa-flask" : ""} actionPlaceHolder="Seed Flights" action={() => seedFlights()}>
                 <FlightList flights={availableFlights}></FlightList>
             </Panel>
-            {
-                isLoading && <div >
-                    <div class={`spinner-grow text-success`} role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                </div>
-            }
         </>
     )
 }

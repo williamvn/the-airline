@@ -16,6 +16,7 @@ function App() {
   const [userClient, setUserClient] = useUserClient();
   const [showBookFlightPopup, setShowBookFlightPopup] = useState(false);
   const { provider: web3, account } = useContext(Web3Context);
+  const [isLoading, setIsLoading] = useState(false);
 
   const updateBalance = useCallback(
     async () => {
@@ -84,21 +85,20 @@ function App() {
           <PointsPanel></PointsPanel>
         </div>
         <div className={styles.row}>
-          <AvailableFlightsPanel></AvailableFlightsPanel>
+          <AvailableFlightsPanel setIsLoading={setIsLoading}></AvailableFlightsPanel>
           <Panel title="Your flights" actionIconClass="fa fa-plus-square-o" actionPlaceHolder="Book New Flight" action={() => setShowBookFlightPopup(true)}>
             <FlightList flights={userClient.bookedFlights}></FlightList>
           </Panel>
         </div>
       </header>
       {showBookFlightPopup && <BookFlightPopup onClose={() => setShowBookFlightPopup(false)}></BookFlightPopup>}
-      {/* {
-        // This loader should be in App
+      {
         isLoading && <div className={styles.loaderOverlay}>
           <div class={`spinner-grow text-success ${styles.spinnerLg}`} role="status">
             <span class="sr-only">Loading...</span>
           </div>
         </div>
-      } */}
+      }
     </div >
   );
 }
