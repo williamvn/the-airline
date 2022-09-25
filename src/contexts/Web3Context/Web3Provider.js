@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect } from 'react'
+import { Loader } from "../../components/Loader/Loader";
 import { useState } from 'react';
 import { useWeb3 } from '../../hooks/useWeb3';
 import { Web3Context } from './Web3Context'
@@ -35,7 +36,7 @@ export const Web3Provider = ({ children }) => {
 
   return (
     <Web3Context.Provider value={{ provider: web3, account, balance, updateBalance }}>
-      {account ? children : <p>Loading....</p>}
+      {account ? children : <Loader></Loader>}
     </Web3Context.Provider>
   )
 }

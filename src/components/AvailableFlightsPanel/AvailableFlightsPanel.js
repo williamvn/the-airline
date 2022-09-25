@@ -5,11 +5,13 @@ import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 import { useAvailableFlights } from '../../hooks/useAvailableFlights';
 import { AirlineService } from '../../services/AirlineService';
 import { FlightService } from '../../services/FlightService';
+import { LoaderContext } from '../../contexts/LoaderContext/LoaderContext';
 
-export const AvailableFlightsPanel = ({ setIsLoading }) => {
+export const AvailableFlightsPanel = () => {
     const [availableFlights, setAvailableFlights] = useAvailableFlights();
     const { provider: web3, account } = useContext(Web3Context);
     const [isOwner, setIsOwner] = useState(false);
+    const { setIsLoading } = useContext(LoaderContext);
 
     useEffect(() => {
         (async () => {

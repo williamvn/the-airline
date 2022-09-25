@@ -9,11 +9,13 @@ import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 import { UserContext } from '../../contexts/UserContext/UserContext';
 import { AirlineService } from '../../services/AirlineService';
 import { removeAllListener } from '../../helpers/RemoveAllListeners';
+import { LoaderContext } from '../../contexts/LoaderContext/LoaderContext';
+import { Loader } from '../Loader/Loader';
 
 function App() {
   const { setUserClient } = useContext(UserContext);
   const { account, updateBalance } = useContext(Web3Context);
-  const [isLoading, setIsLoading] = useState(false);
+  const { isLoading } = useContext(LoaderContext);
 
   useEffect(() => {
     (async () => {
@@ -56,16 +58,12 @@ function App() {
           <PointsPanel></PointsPanel>
         </div>
         <div className={styles.row}>
-          <AvailableFlightsPanel setIsLoading={setIsLoading}></AvailableFlightsPanel>
+          <AvailableFlightsPanel></AvailableFlightsPanel>
           <UserFlightsPanel></UserFlightsPanel>
         </div>
       </div>
       {
-        isLoading && <div className={styles.loaderOverlay}>
-          <div class={`spinner-grow text-success ${styles.spinnerLg}`} role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-        </div>
+        isLoading && <Loader></Loader>
       }
     </div >
   );
