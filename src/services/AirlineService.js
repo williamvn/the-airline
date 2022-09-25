@@ -5,10 +5,13 @@ export class AirlineService {
     static async getInstance() {
         if (!this.singleton) {
             const airlineContract = await getAirline();
-            this.singleton = new AirlineService();
-            this.singleton.airlineContract = airlineContract;
+            this.singleton = new AirlineService(airlineContract);
         }
         return this.singleton;
+    }
+
+    constructor(airlineContract) {
+        this.airlineContract = airlineContract;
     }
 
     getUser(account) {

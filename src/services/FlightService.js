@@ -1,4 +1,3 @@
-import FlightList from "../components/FlightList/FlightList";
 import getFlightContract from "../providers/flights";
 
 export class FlightService {
@@ -6,10 +5,13 @@ export class FlightService {
     static async getInstance() {
         if (!this.singleton) {
             const flightContract = await getFlightContract();
-            this.singleton = new FlightService();
-            this.singleton.flightContract = flightContract;
+            this.singleton = new FlightService(flightContract);
         }
         return this.singleton;
+    }
+
+    constructor(flightContract) {
+        this.flightContract = flightContract;
     }
 
     getAvailableFlights() {
