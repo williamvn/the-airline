@@ -3,13 +3,14 @@ import { Panel } from '../Panel/Panel';
 import { useContext, useEffect, useState } from 'react';
 import ContenLabel from '../ContentLabel/ContentLabel';
 import FlightList from '../FlightList/FlightList';
-import { useAvailableFlights } from '../../Hooks/useAvailableFlights';
-import { useUserClient } from '../../Hooks/useUserClient';
+import { useAvailableFlights } from '../../hooks/useAvailableFlights';
+import { useUserClient } from '../../hooks/useUserClient';
 import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
 import { Web3Context } from '../../contexts/Web3Context';
 import { AirlineService } from '../../services/AirlineService';
 import { useCallback } from 'react';
 import { FlightService } from '../../services/FlightService';
+import { PointsPanel } from '../PointsPanel/PointsPanel';
 
 function App() {
   const [balance, setBalance] = useState(0);
@@ -19,22 +20,6 @@ function App() {
   const { provider: web3, account } = useContext(Web3Context);
   const [isOwner, setIsOwner] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  const exchangePoints = async () => {
-    const airlineService = await AirlineService.getInstance();
-    try {
-      airlineService.reclaimPoints(account);
-      alert("Operation In Progress");
-    } catch (error) {
-      console.log(error);
-      if (error.message.includes("Not enought points")) {
-        alert("No enough points");
-      }
-      else {
-        alert("In this moment it is not possible to reclaim points. Try later");
-      }
-    }
-  }
 
   const updateBalance = useCallback(
     async () => {
@@ -48,7 +33,7 @@ function App() {
   const setOwnerFlag = useCallback(async () => {
     const airlineService = await AirlineService.getInstance();
     airlineService.amIOwner(account).then(value => setIsOwner(value));
-  });
+  }, [account]);
 
   useEffect(() => {
     updateBalance();
@@ -90,7 +75,7 @@ function App() {
         pointsRedeemedEvent.removeAllListeners();
       }
     })();
-  }, [web3, account, setUserClient]);
+  }, [web3, account, setUserClient, updateBalance]);
 
   const seedFlights = async () => {
     setIsLoading(true);
@@ -115,9 +100,7 @@ function App() {
           <Panel title="Balance">
             <ContenLabel content={balance + " ETH"}></ContenLabel>
           </Panel>
-          <Panel title="Loyality points - refundable ether" actionIconClass="fa fa-exchange" actionPlaceHolder="Exchange Points for Ether" action={() => exchangePoints()}>
-            <ContenLabel content={userClient.loyalityPoints + " points"}></ContenLabel>
-          </Panel>
+          <PointsPanel></PointsPanel>
         </div>
         <div className={styles.row}>
           <Panel title="Available Flights" actionIconClass={availableFlights.length === 0 && isOwner ? "fa fa-flask" : ""} actionPlaceHolder="Seed Flights" action={() => seedFlights()}>
