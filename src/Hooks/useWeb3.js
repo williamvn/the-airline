@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import getWeb3 from '../getWeb3';
+import getWeb3 from '../providers/getWeb3';
 
 export const useWeb3 = () => {
     const [web3, setWeb3] = useState();
