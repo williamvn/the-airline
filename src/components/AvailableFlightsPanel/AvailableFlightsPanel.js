@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Web3Context } from '../../contexts/Web3Context';
+import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 import { useAvailableFlights } from '../../hooks/useAvailableFlights';
 import { AirlineService } from '../../services/AirlineService';
 import { FlightService } from '../../services/FlightService';

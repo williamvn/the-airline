@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Web3Context } from '../../contexts/Web3Context';
+import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 import { useUserClient } from '../../hooks/useUserClient';
 import { AirlineService } from '../../services/AirlineService';
 import ContenLabel from '../ContentLabel/ContentLabel';

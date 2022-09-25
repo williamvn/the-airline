@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './FlightList.module.css';
-import { Web3Context } from '../../contexts/Web3Context';
+import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 import { useContext } from 'react';
 
 const FlightList = ({ flights }) => {
@@ -36,7 +36,6 @@ const FlightList = ({ flights }) => {
 };
 
 FlightList.propTypes = {
-  number: PropTypes.string,
   origin: PropTypes.string,
   destination: PropTypes.string,
   price: PropTypes.string

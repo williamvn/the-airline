@@ -5,31 +5,17 @@ import ContenLabel from '../ContentLabel/ContentLabel';
 import FlightList from '../FlightList/FlightList';
 import { useUserClient } from '../../hooks/useUserClient';
 import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
-import { Web3Context } from '../../contexts/Web3Context';
+import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 import { AirlineService } from '../../services/AirlineService';
-import { useCallback } from 'react';
 import { PointsPanel } from '../PointsPanel/PointsPanel';
 import { AvailableFlightsPanel } from '../AvailableFlightsPanel/AvailableFlightsPanel';
+import { BalancePanel } from '../BalancePanel/BalancePanel';
 
 function App() {
-  const [balance, setBalance] = useState(0);
   const [userClient, setUserClient] = useUserClient();
   const [showBookFlightPopup, setShowBookFlightPopup] = useState(false);
-  const { provider: web3, account } = useContext(Web3Context);
+  const { provider: web3, account, updateBalance } = useContext(Web3Context);
   const [isLoading, setIsLoading] = useState(false);
-
-  const updateBalance = useCallback(
-    async () => {
-      let balance = (await web3.eth.getBalance(account));
-      balance = web3.utils.fromWei(balance, 'ether');
-      setBalance(balance);
-    },
-    [web3, account],
-  );
-
-  useEffect(() => {
-    updateBalance();
-  }, [updateBalance])
 
   useEffect(() => {
     (async () => {
@@ -80,9 +66,7 @@ function App() {
       </div>
       <header className={styles["App-header"]}>
         <div className={styles.row}>
-          <Panel title="Balance">
-            <ContenLabel content={balance + " ETH"}></ContenLabel>
-          </Panel>
+          <BalancePanel></BalancePanel>
           <PointsPanel></PointsPanel>
         </div>
         <div className={styles.row}>
