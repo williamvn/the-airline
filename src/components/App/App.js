@@ -1,18 +1,17 @@
 import styles from './App.module.css';
 import { Panel } from '../Panel/Panel';
 import { useContext, useEffect, useState } from 'react';
-import ContenLabel from '../ContentLabel/ContentLabel';
 import FlightList from '../FlightList/FlightList';
-import { useUserClient } from '../../hooks/useUserClient';
 import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
 import { Web3Context } from '../../contexts/Web3Context/Web3Context';
+import { UserContext } from '../../contexts/UserContext/UserContext';
 import { AirlineService } from '../../services/AirlineService';
 import { PointsPanel } from '../PointsPanel/PointsPanel';
 import { AvailableFlightsPanel } from '../AvailableFlightsPanel/AvailableFlightsPanel';
 import { BalancePanel } from '../BalancePanel/BalancePanel';
 
 function App() {
-  const [userClient, setUserClient] = useUserClient();
+  const {userClient, setUserClient} = useContext(UserContext);
   const [showBookFlightPopup, setShowBookFlightPopup] = useState(false);
   const { provider: web3, account, updateBalance } = useContext(Web3Context);
   const [isLoading, setIsLoading] = useState(false);
@@ -31,14 +30,14 @@ function App() {
       flightBookedEvent.on('data', (event) => {
         if (account === event.args.user.toLowerCase()) {
           updateBalance();
-          airlineService.getUser(account).then(user => setUserClient(user));
+          setUserClient(account);
         }
       });
 
       pointsRedeemedEvent.on('data', (event) => {
         if (account === event.args.user.toLowerCase()) {
           updateBalance();
-          airlineService.getUser(account).then(user => setUserClient(user));
+          setUserClient(account);
         }
       });
 
