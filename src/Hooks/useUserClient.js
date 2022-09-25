@@ -11,7 +11,7 @@ export const useUserClient = () => {
             const airlineService = await AirlineService.getInstance();
             airlineService.getUser(account).then(user => setUser(user));
         },
-        [account],
+        [],
     );
 
     useEffect(() => {

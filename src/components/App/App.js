@@ -8,6 +8,7 @@ import { AvailableFlightsPanel } from '../AvailableFlightsPanel/AvailableFlights
 import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 import { UserContext } from '../../contexts/UserContext/UserContext';
 import { AirlineService } from '../../services/AirlineService';
+import { removeAllListener } from '../../helpers/RemoveAllListeners';
 
 function App() {
   const { setUserClient } = useContext(UserContext);
@@ -45,12 +46,6 @@ function App() {
       }
     })();
   }, [account, setUserClient, updateBalance]);
-
-  const removeAllListener = (listeners) => {
-    listeners.forEach(l => {
-      l.removeAllListeners();
-    });
-  }
 
   return (
     <div className={styles.App}>
