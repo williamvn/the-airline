@@ -3,23 +3,19 @@ import { Panel } from '../Panel/Panel';
 import { useContext, useEffect, useState } from 'react';
 import ContenLabel from '../ContentLabel/ContentLabel';
 import FlightList from '../FlightList/FlightList';
-import { useAvailableFlights } from '../../hooks/useAvailableFlights';
 import { useUserClient } from '../../hooks/useUserClient';
 import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
 import { Web3Context } from '../../contexts/Web3Context';
 import { AirlineService } from '../../services/AirlineService';
 import { useCallback } from 'react';
-import { FlightService } from '../../services/FlightService';
 import { PointsPanel } from '../PointsPanel/PointsPanel';
+import { AvailableFlightsPanel } from '../AvailableFlightsPanel/AvailableFlightsPanel';
 
 function App() {
   const [balance, setBalance] = useState(0);
-  const [availableFlights, setAvailableFlights] = useAvailableFlights();
   const [userClient, setUserClient] = useUserClient();
   const [showBookFlightPopup, setShowBookFlightPopup] = useState(false);
   const { provider: web3, account } = useContext(Web3Context);
-  const [isOwner, setIsOwner] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   const updateBalance = useCallback(
     async () => {
@@ -30,15 +26,9 @@ function App() {
     [web3, account],
   );
 
-  const setOwnerFlag = useCallback(async () => {
-    const airlineService = await AirlineService.getInstance();
-    airlineService.amIOwner(account).then(value => setIsOwner(value));
-  }, [account]);
-
   useEffect(() => {
     updateBalance();
-    setOwnerFlag();
-  }, [updateBalance, setOwnerFlag, account])
+  }, [updateBalance])
 
   useEffect(() => {
     (async () => {
@@ -77,15 +67,6 @@ function App() {
     })();
   }, [web3, account, setUserClient, updateBalance]);
 
-  const seedFlights = async () => {
-    setIsLoading(true);
-    const flightService = await FlightService.getInstance();
-    await flightService.seedFlights(web3, account);
-    const newSeedFlights = await flightService.getAvailableFlights();
-    setAvailableFlights(newSeedFlights);
-    setIsLoading(false);
-  }
-
   return (
     <div className={styles.App}>
       <div className={styles["navbar-title"]}>
@@ -103,22 +84,21 @@ function App() {
           <PointsPanel></PointsPanel>
         </div>
         <div className={styles.row}>
-          <Panel title="Available Flights" actionIconClass={availableFlights.length === 0 && isOwner ? "fa fa-flask" : ""} actionPlaceHolder="Seed Flights" action={() => seedFlights()}>
-            <FlightList flights={availableFlights}></FlightList>
-          </Panel>
+          <AvailableFlightsPanel></AvailableFlightsPanel>
           <Panel title="Your flights" actionIconClass="fa fa-plus-square-o" actionPlaceHolder="Book New Flight" action={() => setShowBookFlightPopup(true)}>
             <FlightList flights={userClient.bookedFlights}></FlightList>
           </Panel>
         </div>
       </header>
       {showBookFlightPopup && <BookFlightPopup onClose={() => setShowBookFlightPopup(false)}></BookFlightPopup>}
-      {
+      {/* {
+        // This loader should be in App
         isLoading && <div className={styles.loaderOverlay}>
           <div class={`spinner-grow text-success ${styles.spinnerLg}`} role="status">
             <span class="sr-only">Loading...</span>
           </div>
         </div>
-      }
+      } */}
     </div >
   );
 }
