@@ -1,11 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useState } from 'react';
-import { useWeb3 } from '../hooks/useWeb3';
+import { useWeb3 } from '../../hooks/useWeb3';
 import { Web3Context } from './Web3Context'
 
 export const Web3Provider = ({ children }) => {
   const web3 = useWeb3();
   const [account, setAccount] = useState();
+  const [balance, setBalance] = useState(0);
+
+  const updateBalance = useCallback(
+    async () => {
+      let balance = (await web3.eth.getBalance(account));
+      balance = web3.utils.fromWei(balance, 'ether');
+      setBalance(balance);
+    },
+    [web3, account],
+  );
+
+  useEffect(() => {
+    if (account && web3)
+      updateBalance();
+  }, [account, web3, updateBalance])
 
   useEffect(() => {
     if (web3) {
@@ -19,7 +34,7 @@ export const Web3Provider = ({ children }) => {
   }, [web3]);
 
   return (
-    <Web3Context.Provider value={{provider: web3, account: account}}>
+    <Web3Context.Provider value={{ provider: web3, account, balance, updateBalance }}>
       {account ? children : <p>Loading....</p>}
     </Web3Context.Provider>
   )
