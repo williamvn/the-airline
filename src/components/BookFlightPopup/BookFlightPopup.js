@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
+import styles from './BookFlightPopup.module.css';
 import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 import { useAvailableFlights } from '../../hooks/useAvailableFlights';
 import { AirlineService } from '../../services/AirlineService';
-import styles from './BookFlightPopup.module.css';
 
 const BookFlightPopup = ({ onClose }) => {
   const [availableFlights] = useAvailableFlights();

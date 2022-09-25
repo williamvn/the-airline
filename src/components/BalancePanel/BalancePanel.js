@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { Web3Context } from '../../contexts/Web3Context/Web3Context';
-import ContenLabel from '../ContentLabel/ContentLabel';
 import { Panel } from '../Panel/Panel';
+import { ContenLabel } from '../ContentLabel/ContentLabel';
+import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 
 export const BalancePanel = () => {
     const { balance } = useContext(Web3Context);

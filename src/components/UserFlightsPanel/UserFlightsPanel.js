@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
-import { UserContext } from '../../contexts/UserContext/UserContext';
-import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
 import FlightList from '../FlightList/FlightList';
+import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
 import { Panel } from '../Panel/Panel';
+import { UserContext } from '../../contexts/UserContext/UserContext';
 
 export const UserFlightsPanel = () => {
     const { userClient } = useContext(UserContext);

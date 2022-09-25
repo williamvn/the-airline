@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-header {
+.App-body {
   background-color: #282c34;
   min-height: 100vh;
   flex-direction: column;
@@ -20,52 +20,6 @@
   flex-direction: row;
   display: flex;
 }
-
-.navbar-title {
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
-  font-size: large;
-  background-color: #dadbdd;
-}
-
-
-.tool-tip {
-  display: inline-block;
-}
-
-.tool-tip i {
-  font-size: 30px ;
-  cursor: pointer;
-}
-
-.tool-tip i:hover {
-  color: green;
-}
-
-/* Tool-tip text */
-.tool-tip .tool-tip-text {
-  visibility: hidden;
-  padding: 20px !important;
-  background-color: rgb(138, 138, 138);
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  top: 45px;
-  right: 20px;
-  /* Position the tool-tip text - see examples below! */
-  position: absolute;
-  z-index: 1;
-}
-
-/* Show the tool-tip text when you mouse over the tool-tip container */
-.tool-tip:hover .tool-tip-text {
-  visibility: visible;
-}
-
 
 .loaderOverlay {
   z-index: 10;

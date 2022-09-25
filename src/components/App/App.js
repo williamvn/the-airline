@@ -1,16 +1,17 @@
-import styles from './App.module.css';
 import { useContext, useEffect, useState } from 'react';
+import styles from './App.module.css';
+import { Header } from '../Header/Header';
+import { PointsPanel } from '../PointsPanel/PointsPanel';
+import { BalancePanel } from '../BalancePanel/BalancePanel';
+import { UserFlightsPanel } from '../UserFlightsPanel/UserFlightsPanel';
+import { AvailableFlightsPanel } from '../AvailableFlightsPanel/AvailableFlightsPanel';
 import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 import { UserContext } from '../../contexts/UserContext/UserContext';
 import { AirlineService } from '../../services/AirlineService';
-import { PointsPanel } from '../PointsPanel/PointsPanel';
-import { AvailableFlightsPanel } from '../AvailableFlightsPanel/AvailableFlightsPanel';
-import { BalancePanel } from '../BalancePanel/BalancePanel';
-import { UserFlightsPanel } from '../UserFlightsPanel/UserFlightsPanel';
 
 function App() {
   const { setUserClient } = useContext(UserContext);
-  const { provider: web3, account, updateBalance } = useContext(Web3Context);
+  const { account, updateBalance } = useContext(Web3Context);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -43,7 +44,7 @@ function App() {
         removeAllListener([flightBookedEvent, pointsRedeemedEvent]);
       }
     })();
-  }, [web3, account, setUserClient, updateBalance]);
+  }, [account, setUserClient, updateBalance]);
 
   const removeAllListener = (listeners) => {
     listeners.forEach(l => {
@@ -53,14 +54,8 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <div className={styles["navbar-title"]}>
-        Wellcome to the airline
-        <div className={styles['tool-tip']}>
-          <i className="fa fa-user-circle-o" aria-hidden="true"></i>
-          <span className={styles["tool-tip-text"]}>{account}</span>
-        </div>
-      </div>
-      <div className={styles["App-header"]}>
+      <Header></Header>
+      <div className={styles["App-body"]}>
         <div className={styles.row}>
           <BalancePanel></BalancePanel>
           <PointsPanel></PointsPanel>
