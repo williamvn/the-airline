@@ -1,18 +1,15 @@
 import styles from './App.module.css';
-import { Panel } from '../Panel/Panel';
 import { useContext, useEffect, useState } from 'react';
-import FlightList from '../FlightList/FlightList';
-import BookFlightPopup from '../BookFlightPopup/BookFlightPopup';
 import { Web3Context } from '../../contexts/Web3Context/Web3Context';
 import { UserContext } from '../../contexts/UserContext/UserContext';
 import { AirlineService } from '../../services/AirlineService';
 import { PointsPanel } from '../PointsPanel/PointsPanel';
 import { AvailableFlightsPanel } from '../AvailableFlightsPanel/AvailableFlightsPanel';
 import { BalancePanel } from '../BalancePanel/BalancePanel';
+import { UserFlightsPanel } from '../UserFlightsPanel/UserFlightsPanel';
 
 function App() {
-  const {userClient, setUserClient} = useContext(UserContext);
-  const [showBookFlightPopup, setShowBookFlightPopup] = useState(false);
+  const { setUserClient } = useContext(UserContext);
   const { provider: web3, account, updateBalance } = useContext(Web3Context);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -63,19 +60,16 @@ function App() {
           <span className={styles["tool-tip-text"]}>{account}</span>
         </div>
       </div>
-      <header className={styles["App-header"]}>
+      <div className={styles["App-header"]}>
         <div className={styles.row}>
           <BalancePanel></BalancePanel>
           <PointsPanel></PointsPanel>
         </div>
         <div className={styles.row}>
           <AvailableFlightsPanel setIsLoading={setIsLoading}></AvailableFlightsPanel>
-          <Panel title="Your flights" actionIconClass="fa fa-plus-square-o" actionPlaceHolder="Book New Flight" action={() => setShowBookFlightPopup(true)}>
-            <FlightList flights={userClient.bookedFlights}></FlightList>
-          </Panel>
+          <UserFlightsPanel></UserFlightsPanel>
         </div>
-      </header>
-      {showBookFlightPopup && <BookFlightPopup onClose={() => setShowBookFlightPopup(false)}></BookFlightPopup>}
+      </div>
       {
         isLoading && <div className={styles.loaderOverlay}>
           <div class={`spinner-grow text-success ${styles.spinnerLg}`} role="status">

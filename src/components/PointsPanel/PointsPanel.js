@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { UserContext } from '../../contexts/UserContext/UserContext';
 import { Web3Context } from '../../contexts/Web3Context/Web3Context';
-import { useUserClient } from '../../hooks/useUserClient';
 import { AirlineService } from '../../services/AirlineService';
 import ContenLabel from '../ContentLabel/ContentLabel';
 import { Panel } from '../Panel/Panel';
