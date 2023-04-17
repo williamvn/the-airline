@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react'
 import { Loader } from "../../components/Loader/Loader";
 import { useState } from 'react';
-import { useWeb3 } from '../../hooks/useWeb3';
+import { useWeb3 } from '../../Hooks/useWeb3';
 import { Web3Context } from './Web3Context'
 
 export const Web3Provider = ({ children }) => {

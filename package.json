@@ -13,7 +13,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cp ./build/contracts/* ./src/build/contracts/ && react-scripts --openssl-legacy-provider start",
+    "start": "cp ./build/contracts/* ./src/build/contracts/ && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Panel } from '../Panel/Panel';
 import FlightList from '../FlightList/FlightList';
 import { Web3Context } from '../../contexts/Web3Context/Web3Context';
-import { useAvailableFlights } from '../../hooks/useAvailableFlights';
+import { useAvailableFlights } from '../../Hooks/useAvailableFlights';
 import { AirlineService } from '../../services/AirlineService';
 import { FlightService } from '../../services/FlightService';
 import { LoaderContext } from '../../contexts/LoaderContext/LoaderContext';

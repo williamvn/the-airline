@@ -1,5 +1,5 @@
 import React from 'react'
-import { useUserClient } from '../../hooks/useUserClient';
+import { useUserClient } from '../../Hooks/useUserClient';
 import { UserContext } from './UserContext';
 
 export const UserProvider = ({ children }) => {
