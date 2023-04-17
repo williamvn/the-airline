@@ -23,7 +23,7 @@ Then using `truffle deploy` you will be able to deploy the contracts in your loc
 - Sing in in metamask, and add the test network being use (Ganache).
 - Import the test accounts, which you want to interact in the app, in Ganache using their private keys.
 - ```npm run start```
-# If you encounter an error "cannot read properties of undefined (reading 'toLowerCase')" or "Ethereum provider not found" follow the next steps
+#### If you encounter an error "cannot read properties of undefined (reading 'toLowerCase')" or "Ethereum provider not found" follow the next steps
 - Run in your browser console the following command `window.ethereum.enable()`
 - This may open metamask and ask you about what Accounts you want to connect to the app
 - Select the accounts and run `npm run start`
