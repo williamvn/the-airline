@@ -13,11 +13,20 @@ The project is a monorepo using Truffle framework and solidity for the smart con
 ## Dependencies
 - Install [truffle.js](https://trufflesuite.com/)
 - Install [Metamask extension](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en)
-
+- Node.js (14 - 16)
 ## Setup
 After installed listed dependencies, you will need to first setup a local test ethereum blockchain where you can deploy the contracts. Suggestion use [Ganache](https://trufflesuite.com/ganache/)
 
 Then using `truffle deploy` you will be able to deploy the contracts in your local network.
+
+## How to run?
+- Sing in in metamask, and add the test network being use (Ganache).
+- Import the test accounts, which you want to interact in the app, in Ganache using their private keys.
+- ```npm run start```
+# If you encounter an error "cannot read properties of undefined (reading 'toLowerCase')" or "Ethereum provider not found" follow the next steps
+- Run in your browser console the following command `window.ethereum.enable()`
+- This may open metamask and ask you about what Accounts you want to connect to the app
+- Select the accounts and run `npm run start`
 
 ## Available Scripts
 
